@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Remove body padding to avoid overlap with fixed navbar */
+        body {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+            margin-bottom: 0;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+        /* Contact Header Styling */
+        .contact-header {
+            background-color: #f4f4f4;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+/* Contact Information Section */
+.contact-info {
+        padding: 50px 15px; /* Add padding for smaller devices */
+    }
+
+    .info-item {
+        text-align: center; /* Ensure alignment for smaller screens */
+    }
+
+    /* Contact Form Section */
+    .contact-form {
+        padding: 50px 15px; /* Add padding for smaller devices */
+    }
+
+    @media (max-width: 768px) {
+        .contact-header h1 {
+            font-size: 2rem; /* Adjust header font size for small screens */
+        }
+
+        .contact-header p {
+            font-size: 1rem; /* Adjust paragraph font size */
+        }
+
+        .info-item h5 {
+            font-size: 1rem; /* Adjust font size for small screens */
+        }
+
+        .info-item p {
+            font-size: 0.9rem;
+        }
+
+        .contact-form .form-control {
+            font-size: 0.9rem; /* Smaller text in inputs for mobile */
+        }
+
+        .contact-form button {
+            font-size: 1rem; /* Adjust button size for small screens */
+        }
+    }
+
+    @media (min-width: 992px) {
+        .contact-info,
+        .contact-form {
+            padding: 50px 100px; /* Add extra padding for large screens */
+        }
+    }
+
+        .contact-form button:hover {
+            background-color: #e67e22;
+        }
+
+        .contact-header {
+    padding-top: 100px; 
+    text-align: center; 
+}
+
+
+        /* Social Media Section */
+        .social-media {
+            background-color: #333;
+            padding: 30px 0;
+            color: #fff;
+        }
+
+        .social-media a {
+            font-size: 1.5rem;
+            color: #fff;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #f08a24;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Confirmation Message Styling */
+        .confirmation-message {
+            display: none;
+            background-color: #dff0d8;
+            color: #3c763d;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+}
+
+/* Style adjustments for smoother interaction */
+.nav-item.dropdown:hover > .nav-link {
+    color: #ff5722; /* Highlight active menu item */
+}
+
+/* Match dropdown menu background to navbar */
+.navbar-custom .dropdown-menu {
+    background-color: #333; /* Same color as the navbar */
+    border: none; /* Remove border */
+}
+
+/* Change dropdown item text color */
+.navbar-custom .dropdown-item {
+    color: #fff; /* White text color */
+}
+
+/* Change dropdown item hover background and text color */
+.navbar-custom .dropdown-item:hover {
+    background-color: #f08a24; /* Highlight background color */
+    color: #fff; /* Keep text white */
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+
+            <!-- Dropdown for Categories -->
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="categoriesDropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- Contact Header -->
+    <header class="contact-header">
+        <h1>Contact Us</h1>
+        <p>We're here to answer any questions you have about traveling in Asia!</p>
+    </header>
+
+   <!-- Contact Information -->
+<div class="container contact-info px-3">
+    <div class="row text-center">
+        <div class="col-md-4 info-item mb-4">
+            <h5>Address</h5>
+            <p>123 Malingeb, Bantay, Ilocos Sur</p>
+        </div>
+        <div class="col-md-4 info-item mb-4">
+            <h5>Phone</h5>
+            <p>123456789</p>
+        </div>
+        <div class="col-md-4 info-item mb-4">
+            <h5>Email</h5>
+            <p>mwamwa@gmail.com</p>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Form -->
+<div class="container contact-form px-3">
+    <h2 class="text-center mb-4">Message Us</h2>
+    <form id="contactForm" action="submit_contact.php" method="post" onsubmit="return showConfirmation(event)">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" class="form-control" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" onclick="showConfirmation(event)">Send Message</button>
+    </form>
+    <div class="confirmation-message" id="confirmationMessage">Message Sent!</div>
+</div>
+
+
+    <script>
+        // Enable dropdown on hover for touch devices
+    document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+        dropdown.addEventListener('mouseenter', function () {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.add('show');
+        });
+    
+        dropdown.addEventListener('mouseleave', function () {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.remove('show');
+        });
+    });
+    
+    </script>
+
+<!-- Footer -->
+<footer class="py-4 text-center">
+    <p>&copy; 2024 The Asia Travel Guy | All Rights Reserved</p>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+function showConfirmation(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get all form fields
+    const formFields = [
+        { id: 'name', label: 'Name' },
+        { id: 'email', label: 'Email' },
+        { id: 'subject', label: 'Subject' },
+        { id: 'message', label: 'Message' }
+    ];
+
+    let isValid = true; // To track overall form validity
+
+    formFields.forEach(field => {
+        const input = document.getElementById(field.id);
+        const errorElement = document.querySelector(`#${field.id}-error`);
+
+        // Email-specific validation
+        if (field.id === 'email') {
+            if (!input.value.trim() || !input.value.includes('@')) {
+                isValid = false;
+
+                // Add email-specific error message if not already present
+                if (!errorElement) {
+                    const errorMessage = document.createElement('small');
+                    errorMessage.id = `${field.id}-error`;
+                    errorMessage.className = 'text-danger';
+                    errorMessage.innerText = `${field.label} must include a valid email address (e.g., user@example.com).`;
+                    input.parentElement.appendChild(errorMessage);
+                }
+
+                // Highlight the input box with a red border
+                input.classList.add('is-invalid');
+            } else {
+                // If the email is valid, remove error message and styles
+                if (errorElement) {
+                    errorElement.remove();
+                }
+                input.classList.remove('is-invalid');
+            }
+        } 
+        // General validation for other fields
+        else if (!input.value.trim()) {
+            isValid = false;
+
+            // If the error message doesn't already exist, add it
+            if (!errorElement) {
+                const errorMessage = document.createElement('small');
+                errorMessage.id = `${field.id}-error`;
+                errorMessage.className = 'text-danger'; // Bootstrap's text-danger class for styling
+                errorMessage.innerText = `${field.label} is required.`;
+                input.parentElement.appendChild(errorMessage);
+            }
+
+            // Highlight the input box with a red border
+            input.classList.add('is-invalid');
+        } else {
+            // If the field is valid, remove error message and styles
+            if (errorElement) {
+                errorElement.remove();
+            }
+            input.classList.remove('is-invalid');
+        }
+    });
+
+    // If the form is invalid, stop further execution
+    if (!isValid) {
+        return false;
+    }
+
+    // Show the confirmation message if the form is valid
+    var confirmationMessage = document.getElementById('confirmationMessage');
+    confirmationMessage.style.display = 'block';
+
+    // Clear the form fields
+    document.getElementById('contactForm').reset();
+
+    // Hide the confirmation message after 3 seconds
+    setTimeout(function () {
+        confirmationMessage.style.display = 'none';
+    }, 3000);
+
+    return false; // Prevent form submission
+}
+
+    </script>
+    
+ 
+</body>
+</html>

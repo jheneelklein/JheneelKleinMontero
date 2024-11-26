@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+        /* Featured Destinations Section Styling */
+#featured-destinations {
+    padding: 120px 0 60px; /* Increase the top padding to move the section down */
+    background-color: #f9f9f9;
+}
+
+#featured-destinations h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 40px; /* Add some space above the heading */
+}
+
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card .btn {
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn:hover {
+            background-color: #0056b3;
+        }
+        
+                        /* Enable dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Align dropdown menu properly */
+}
+
+/* Style adjustments for smoother interaction */
+.nav-item.dropdown:hover > .nav-link {
+    color: #ff5722; /* Highlight active menu item */
+}
+
+/* Match dropdown menu background to navbar */
+.navbar-custom .dropdown-menu {
+    background-color: #333; /* Same color as the navbar */
+    border: none; /* Remove border */
+}
+
+/* Change dropdown item text color */
+.navbar-custom .dropdown-item {
+    color: #fff; /* White text color */
+}
+
+/* Change dropdown item hover background and text color */
+.navbar-custom .dropdown-item:hover {
+    background-color: #f08a24; /* Highlight background color */
+    color: #fff; /* Keep text white */
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+
+            <!-- Dropdown for Categories -->
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="categoriesDropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Featured Destinations Section -->
+<section id="featured-destinations" class="container py-5">
+    <h2 class="text-center mb-4">Featured Asian Destinations</h2>
+    <div class="row">
+        <!-- Tokyo, Japan -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://lp-cms-production.imgix.net/image_browser/The%20best%20free%20things%20to%20do%20in%20Tokyo.jpg?auto=format&fit=crop&q=40&sharp=10&vib=20&ixlib=react-8.6.4" class="card-img-top" alt="Tokyo, Japan">
+                <div class="card-body">
+                    <h5 class="card-title">Tokyo, Japan</h5>
+                    <p class="card-text">A vibrant blend of ancient traditions and modern technology, Tokyo offers incredible shopping, culture, and food.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tokyoModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bali, Indonesia -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://www.tripsavvy.com/thmb/zR66ZxijvjFqje_KesdoLpHbI8g=/3865x2576/filters:fill(auto,1)/pura-ulun-danu-bratan-water-temple--bali-546108613-5a088d01494ec90037e485fc.jpg" class="card-img-top" alt="Bali, Indonesia">
+                <div class="card-body">
+                    <h5 class="card-title">Bali, Indonesia</h5>
+                    <p class="card-text">Known for its scenic beauty, from stunning beaches to lush rice terraces and spiritual temples.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#baliModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bangkok, Thailand -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://www.fodors.com/wp-content/uploads/2019/04/HERO_BangkokTips_Hero_shutterstock_367503629.jpg" class="card-img-top" alt="Bangkok, Thailand">
+                <div class="card-body">
+                    <h5 class="card-title">Bangkok, Thailand</h5>
+                    <p class="card-text">From golden temples to bustling street markets, Bangkok offers a rich cultural experience combined with modern thrills.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bangkokModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Kyoto, Japan -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://cdn2.wanderlust.co.uk/media/5740/magazine-autumn-color-at-kiyomizu-dera-temple-in-kyoto.jpg?width=460&slimmage=true" class="card-img-top" alt="Kyoto, Japan">
+                <div class="card-body">
+                    <h5 class="card-title">Kyoto, Japan</h5>
+                    <p class="card-text">Known for its classical Buddhist temples, stunning gardens, and traditional wooden houses.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kyotoModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Seoul, South Korea -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://wallpaperaccess.com/full/6245.jpg" class="card-img-top" alt="Seoul, South Korea">
+                <div class="card-body">
+                    <h5 class="card-title">Seoul, South Korea</h5>
+                    <p class="card-text">A vibrant city blending historic palaces with modern skyscrapers and trendy shopping districts.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#seoulModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Beijing, China -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="http://www.getsready.com/wp-content/uploads/2017/01/Beijing-best-places-to-visit.jpg" class="card-img-top" alt="Beijing, China">
+                <div class="card-body">
+                    <h5 class="card-title">Beijing, China</h5>
+                    <p class="card-text">The capital of China, offering historical landmarks like the Forbidden City and Tiananmen Square.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beijingModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Singapore -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://images.hdqwalls.com/wallpapers/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg" class="card-img-top" alt="Singapore">
+                <div class="card-body">
+                    <h5 class="card-title">Singapore</h5>
+                    <p class="card-text">Famous for its cleanliness, futuristic skyline, and blend of diverse cultures.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#singaporeModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Hanoi, Vietnam -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://a.cdn-hotels.com/gdcs/production144/d1394/a304783d-6dc9-4bb2-9239-d124a16a154e.jpg" class="card-img-top" alt="Hanoi, Vietnam">
+                <div class="card-body">
+                    <h5 class="card-title">Hanoi, Vietnam</h5>
+                    <p class="card-text">A city with a unique blend of ancient history, colonial influences, and modern culture.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#hanoiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Manila, Philippines -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://4.bp.blogspot.com/-HEYoj2hxiP4/V29wR-WBa0I/AAAAAAAAKP4/J8esIzs1cHo8HpPMsYlYAiR6YLHznej0ACLcB/s1600/T7c71.jpg" class="card-img-top" alt="Manila, Philippines">
+                <div class="card-body">
+                    <h5 class="card-title">Manila, Philippines</h5>
+                    <p class="card-text">The vibrant capital of the Philippines, showcasing Spanish colonial architecture and a thriving modern city life.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#manilaModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Kuala Lumpur, Malaysia -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://www.pentrental.com/wp-content/uploads/2019/06/Kuala_Lumpur-scaled.jpg" class="card-img-top" alt="Kuala Lumpur, Malaysia">
+                <div class="card-body">
+                    <h5 class="card-title">Kuala Lumpur, Malaysia</h5>
+                    <p class="card-text">Famous for its Petronas Towers, Kuala Lumpur is a city filled with cultural diversity and modern attractions.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kualaLumpurModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jaipur, India -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://www.tripsavvy.com/thmb/_wgidcLzUefiil4U1xNgv-YG18E=/3865x2576/filters:no_upscale():max_bytes(150000):strip_icc()/facade-of-the-hawa-mahal-palace-of-winds-in-jaipur-rajasthan-india-636950806-58e24eed5f9b58ef7e556bbb.jpg" class="card-img-top" alt="Jaipur, India">
+                <div class="card-body">
+                    <h5 class="card-title">Jaipur, India</h5>
+                    <p class="card-text">Known as the "Pink City," Jaipur is famous for its palaces, forts, and vibrant bazaars.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#jaipurModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taipei, Taiwan -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://www.newszii.com/wp-content/uploads/2019/05/Taipei_skyline_cityscape_at_night_with_full_moon.jpg" class="card-img-top" alt="Taipei, Taiwan">
+                <div class="card-body">
+                    <h5 class="card-title">Taipei, Taiwan</h5>
+                    <p class="card-text">A city blending modernity and tradition, Taipei offers iconic landmarks, night markets, and hot springs.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#taipeiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dubai, UAE -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://a.cdn-hotels.com/gdcs/production121/d772/6b5a9a4c-fd06-4bcf-b2f0-d979e3704cf9.jpg" class="card-img-top" alt="Dubai, UAE">
+                <div class="card-body">
+                    <h5 class="card-title">Dubai, UAE</h5>
+                    <p class="card-text">Known for the Burj Khalifa, Dubai is a futuristic city with luxury shopping and cultural landmarks.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dubaiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kathmandu, Nepal -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://4.bp.blogspot.com/-5NV_-QAQyrc/VWgSeRh0vDI/AAAAAAAABTo/OjVm1Ou6Pz4/s1600/1370861827_Kathmandu-Ruins-Nepal.jpg" class="card-img-top" alt="Kathmandu, Nepal">
+                <div class="card-body">
+                    <h5 class="card-title">Kathmandu, Nepal</h5>
+                    <p class="card-text">A historical and spiritual center surrounded by the stunning Himalayas, Kathmandu is full of ancient temples and palaces.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kathmanduModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ulaanbaatar, Mongolia -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/b9/a6/b4/b9a6b4bf299c1c5615ff4d77a57d5537.jpg"card-img-top" alt="Ulaanbaatar, Mongolia">
+                <div class="card-body">
+                    <h5 class="card-title">Ulaanbaatar, Mongolia</h5>
+                    <p class="card-text">A city of contrasts, Ulaanbaatar offers a mix of ancient Mongolian culture and modern urban life.</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ulaanbaatarModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal for Tokyo -->
+<div class="modal fade" id="tokyoModal" tabindex="-1" role="dialog" aria-labelledby="tokyoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tokyoModalLabel">Tokyo, Japan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Tokyo is a vibrant blend of ancient traditions and cutting-edge technology. You can visit historical temples like Senso-ji or explore the modern streets of Shibuya and Shinjuku. From unique street food to upscale dining experiences, Tokyo offers something for everyone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Bali -->
+<div class="modal fade" id="baliModal" tabindex="-1" role="dialog" aria-labelledby="baliModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="baliModalLabel">Bali, Indonesia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Bali is a paradise with stunning beaches, lush rice terraces, and spiritual temples. It's a destination that offers something for every traveler—whether you’re looking for a relaxing beach holiday or an adventurous hiking trip. The island is also renowned for its vibrant culture, particularly in Ubud.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Bangkok -->
+<div class="modal fade" id="bangkokModal" tabindex="-1" role="dialog" aria-labelledby="bangkokModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bangkokModalLabel">Bangkok, Thailand</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Bangkok is a city where the past and present collide. You can visit magnificent temples like Wat Arun and Wat Phra Kaew or shop in vibrant markets like Chatuchak and floating markets. The city is famous for its street food, nightlife, and rooftop bars.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Kyoto -->
+<div class="modal fade" id="kyotoModal" tabindex="-1" role="dialog" aria-labelledby="kyotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kyotoModalLabel">Kyoto, Japan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Kyoto is a city steeped in history and culture. It is home to classical Buddhist temples, stunning gardens, imperial palaces, and traditional wooden houses. Don't miss the iconic Fushimi Inari-taisha Shrine with its thousands of vermillion torii gates.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Seoul -->
+<div class="modal fade" id="seoulModal" tabindex="-1" role="dialog" aria-labelledby="seoulModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="seoulModalLabel">Seoul, South Korea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Seoul is a dynamic city blending traditional Korean culture with modern innovation. Explore historical landmarks like Gyeongbokgung Palace and shop in trendy districts like Myeongdong. Don't miss the iconic N Seoul Tower for panoramic city views.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Beijing -->
+<div class="modal fade" id="beijingModal" tabindex="-1" role="dialog" aria-labelledby="beijingModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="beijingModalLabel">Beijing, China</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Beijing, the capital of China, is rich in history and culture. Visit landmarks like the Forbidden City, Tiananmen Square, and the Great Wall. Explore the bustling hutongs for a glimpse of traditional Beijing life.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Singapore -->
+<div class="modal fade" id="singaporeModal" tabindex="-1" role="dialog" aria-labelledby="singaporeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="singaporeModalLabel">Singapore</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Singapore is a bustling metropolis known for its futuristic skyline, vibrant cultural districts, and culinary delights. Must-see attractions include Marina Bay Sands, Gardens by the Bay, and Sentosa Island.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Hanoi -->
+<div class="modal fade" id="hanoiModal" tabindex="-1" role="dialog" aria-labelledby="hanoiModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="hanoiModalLabel">Hanoi, Vietnam</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Hanoi, the capital of Vietnam, is a city of contrasts. Stroll through the Old Quarter's bustling streets, enjoy Vietnamese coffee at a local café, or visit the serene Hoan Kiem Lake.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Manila -->
+<div class="modal fade" id="manilaModal" tabindex="-1" role="dialog" aria-labelledby="manilaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="manilaModalLabel">Manila, Philippines</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                Manila offers a mix of historical landmarks, modern attractions, and lively street culture. Visit Intramuros, explore the National Museum, or relax at Manila Bay.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Kuala Lumpur -->
+<div class="modal fade" id="kualaLumpurModal" tabindex="-1" role="dialog" aria-labelledby="kualaLumpurModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kualaLumpurModalLabel">Kuala Lumpur, Malaysia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Famous for the iconic Petronas Towers, Kuala Lumpur is a city filled with cultural diversity, modern attractions, and fantastic food. Discover a blend of colonial buildings and sleek skyscrapers, bustling street markets, and upscale shopping malls. Don’t miss out on the Batu Caves and the vibrant Chinatown.</p>
+                <ul>
+                    <li><strong>Top Attractions:</strong> Petronas Towers, Batu Caves, Merdeka Square</li>
+                    <li><strong>Best Time to Visit:</strong> November to February</li>
+                    <li><strong>Must Try:</strong> Nasi Lemak, Satay, Roti Canai</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Jaipur -->
+<div class="modal fade" id="jaipurModal" tabindex="-1" role="dialog" aria-labelledby="jaipurModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="jaipurModalLabel">Jaipur, India</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Known as the "Pink City" for its distinctive pink-colored buildings, Jaipur is famous for its palaces, forts, and vibrant bazaars. Explore the majestic Amber Fort, City Palace, and Hawa Mahal. The city is also a great place to shop for traditional handicrafts, textiles, and jewelry.</p>
+                <ul>
+                    <li><strong>Top Attractions:</strong> Amber Fort, City Palace, Hawa Mahal</li>
+                    <li><strong>Best Time to Visit:</strong> November to March</li>
+                    <li><strong>Must Try:</strong> Dal Baati Churma, Ghewar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Taipei -->
+<div class="modal fade" id="taipeiModal" tabindex="-1" role="dialog" aria-labelledby="taipeiModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="taipeiModalLabel">Taipei, Taiwan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>A city blending modernity and tradition, Taipei offers iconic landmarks like the Taipei 101, vibrant night markets, and relaxing hot springs. Visit the Chiang Kai-shek Memorial Hall, take a walk through the bustling Ximending district, or hike the Elephant Mountain for panoramic views of the city.</p>
+                <ul>
+                    <li><strong>Top Attractions:</strong> Taipei 101, Chiang Kai-shek Memorial Hall, Elephant Mountain</li>
+                    <li><strong>Best Time to Visit:</strong> October to April</li>
+                    <li><strong>Must Try:</strong> Beef Noodle Soup, Xiao Long Bao</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Dubai -->
+<div class="modal fade" id="dubaiModal" tabindex="-1" role="dialog" aria-labelledby="dubaiModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dubaiModalLabel">Dubai, UAE</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Dubai is a futuristic city known for its luxurious shopping malls, skyscrapers like the Burj Khalifa, and innovative architecture. Visit the famous Dubai Mall, the Dubai Fountain, and the traditional souks for a unique blend of modern and ancient cultures. Don’t miss a trip to the Palm Jumeirah and the Dubai Marina.</p>
+                <ul>
+                    <li><strong>Top Attractions:</strong> Burj Khalifa, Dubai Mall, Palm Jumeirah</li>
+                    <li><strong>Best Time to Visit:</strong> November to March</li>
+                    <li><strong>Must Try:</strong> Shawarma, Dates</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Kathmandu -->
+<div class="modal fade" id="kathmanduModal" tabindex="-1" role="dialog" aria-labelledby="kathmanduModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kathmanduModalLabel">Kathmandu, Nepal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Known as the gateway to the Himalayas, Kathmandu is filled with ancient temples, stupas, and rich cultural experiences. Explore Durbar Square, the Swayambhunath Stupa (Monkey Temple), and the Pashupatinath Temple. Kathmandu is also a hub for trekking to Everest Base Camp and the Annapurna Circuit.</p>
+                <ul>
+                    <li><strong>Top Attractions:</strong> Durbar Square, Swayambhunath, Pashupatinath Temple</li>
+                    <li><strong>Best Time to Visit:</strong> September to November</li>
+                    <li><strong>Must Try:</strong> Momo, Dal Bhat</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Ulaanbaatar -->
+<div class="modal fade" id="ulaanbaatarModal" tabindex="-1" role="dialog" aria-labelledby="ulaanbaatarModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ulaanbaatarModalLabel">Ulaanbaatar, Mongolia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Ulaanbaatar, Mongolia’s capital, offers a fascinating mix of nomadic traditions and modern life. Visit the Genghis Khan Statue, the Gandantegchinlen Monastery, and the National Museum of Mongolia to discover the country’s history and culture. Explore the vast Mongolian steppe and enjoy a stay with nomadic families.</p>
+                <ul>
+                    <li><strong>Top Attractions:</strong> Genghis Khan Statue, Gandantegchinlen Monastery, National Museum of Mongolia</li>
+                    <li><strong>Best Time to Visit:</strong> June to August</li>
+                    <li><strong>Must Try:</strong> Khorkhog, Airag</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+    <script>
+        // Enable dropdown on hover for touch devices
+    document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+        dropdown.addEventListener('mouseenter', function () {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.add('show');
+        });
+    
+        dropdown.addEventListener('mouseleave', function () {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.remove('show');
+        });
+    });
+    
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

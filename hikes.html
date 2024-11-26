@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hikes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+        }
+    
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+    
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+    
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+    
+        /* Hike Cards */
+        .hike-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .hike-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Read More Button */
+        .card .btn {
+            background-color: #f08a24;
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+    
+        .card .btn:hover {
+            background-color: #ff5722;
+        }
+    
+        .text-orange {
+            color: #f08a24;
+        }
+    
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+    
+        /* Enable dropdown on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+    
+        /* Style adjustments for smoother interaction */
+        .nav-item.dropdown:hover > .nav-link {
+            color: #ff5722;
+        }
+    
+        /* Match dropdown menu background to navbar */
+        .navbar-custom .dropdown-menu {
+            background-color: #333;
+            border: none;
+        }
+    
+        /* Change dropdown item text color */
+        .navbar-custom .dropdown-item {
+            color: #fff;
+        }
+    
+        /* Change dropdown item hover background and text color */
+        .navbar-custom .dropdown-item:hover {
+            background-color: #f08a24;
+            color: #fff;
+        }
+    
+    </style>
+    
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hike List -->
+<div class="container my-5" style="padding-top: 20px;">
+    <h2 class="text-center text-orange my-4">Hikes in Asia</h2>
+    <div class="row">
+        <!-- Mount Fuji -->
+        <div class="col-md-4">
+            <div class="card hike-card">
+                <img src="http://www.travelplanet.in/wp-content/uploads/2016/03/291425-mount-fuji.jpg" class="card-img-top" alt="Mount Fuji">
+                <div class="card-body">
+                    <p class="text-muted">Japan • Honshu</p>
+                    <h5 class="card-title">Mount Fuji</h5>
+                    <p class="card-text">Climbing Mount Fuji is a challenging and rewarding experience for hikers of all levels.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#fujiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Fuji -->
+        <div class="modal fade" id="fujiModal" tabindex="-1" role="dialog" aria-labelledby="fujiModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="fujiModalLabel">Mount Fuji</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Fuji, Japan's highest peak, offers a stunning view from the top and a hike that challenges every adventurer.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Annapurna Circuit -->
+        <div class="col-md-4">
+            <div class="card hike-card">
+                <img src="https://4.bp.blogspot.com/-F1hZxLm8w7I/WuL2ra20ALI/AAAAAAAABoQ/H-9_ehn2iKgm7QeOR2pZrBHNpTCBG3z1ACLcBGAs/s1600/Annapurna%2BSanctuary%2BTrek%2BNepal.JPG" class="card-img-top" alt="Annapurna Circuit">
+                <div class="card-body">
+                    <p class="text-muted">Nepal • Himalayas</p>
+                    <h5 class="card-title">Annapurna Circuit</h5>
+                    <p class="card-text">One of the best long-distance hikes in the world, offering stunning views of the Himalayas.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#annapurnaModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Annapurna -->
+        <div class="modal fade" id="annapurnaModal" tabindex="-1" role="dialog" aria-labelledby="annapurnaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="annapurnaModalLabel">Annapurna Circuit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Annapurna Circuit offers trekkers some of the best hiking experiences in the Himalayas, with breathtaking views.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tiger Leaping Gorge -->
+        <div class="col-md-4">
+            <div class="card hike-card">
+                <img src="https://www.tripsavvy.com/thmb/RXu62fWBMVRZWMao5PcBjusQe3M=/2119x1415/filters:fill(auto,1)/tiger-leaping-gorge--deepest-mountain-hole-in-world--in-lijiang--yunnan-province--china--927478034-000a2343884a4d428b1ddf738f46b195.jpg" class="card-img-top" alt="Tiger Leaping Gorge">
+                <div class="card-body">
+                    <p class="text-muted">China • Yunnan</p>
+                    <h5 class="card-title">Tiger Leaping Gorge</h5>
+                    <p class="card-text">A world-renowned hiking destination with spectacular views of the Jinsha River and surrounding mountains.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#tigergorgeModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Tiger Leaping Gorge -->
+        <div class="modal fade" id="tigergorgeModal" tabindex="-1" role="dialog" aria-labelledby="tigergorgeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tigergorgeModalLabel">Tiger Leaping Gorge</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Tiger Leaping Gorge hike offers some of the most rugged and scenic paths in China.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Rinjani -->
+        <div class="col-md-4">
+            <div class="card hike-card">
+                <img src="https://i2.wp.com/gamintraveler.com/wp-content/uploads/2017/07/IMG_6807.jpg" class="card-img-top" alt="Mount Rinjani">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia • Lombok</p>
+                    <h5 class="card-title">Mount Rinjani</h5>
+                    <p class="card-text">A beautiful trek in Indonesia’s second highest volcano, featuring diverse landscapes and a stunning crater lake.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#rinjaniModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Rinjani -->
+        <div class="modal fade" id="rinjaniModal" tabindex="-1" role="dialog" aria-labelledby="rinjaniModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rinjaniModalLabel">Mount Rinjani</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Trekking to the summit of Mount Rinjani offers scenic views of volcanic landscapes and a stunning crater lake.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Everest Base Camp -->
+        <div class="col-md-4">
+            <div class="card hike-card">
+                <img src="https://nypost.com/wp-content/uploads/sites/2/2020/04/everest-base-camp.jpg?quality=90&strip=all" class="card-img-top" alt="Mount Everest Base Camp">
+                <div class="card-body">
+                    <p class="text-muted">Nepal • Himalayas</p>
+                    <h5 class="card-title">Mount Everest Base Camp</h5>
+                    <p class="card-text">A bucket-list trek that brings you close to the world's highest peak, with breathtaking views of the surrounding mountains.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#everestModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Everest Base Camp -->
+        <div class="modal fade" id="everestModal" tabindex="-1" role="dialog" aria-labelledby="everestModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="everestModalLabel">Mount Everest Base Camp</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Mount Everest Base Camp trek takes you through the Sherpa villages, monasteries, and high-altitude terrain to the foot of the world’s highest peak.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+               <!-- 1. Mount Kilimanjaro -->
+               <div class="col-md-4">
+                <div class="card hike-card">
+                    <img src="https://worldadventuretours.com/wp-content/uploads/2019/11/Mount-Kilimanjaro-Lemosho-climb.jpg" class="card-img-top" alt="Mount Kilimanjaro">
+                    <div class="card-body">
+                        <p class="text-muted">Tanzania • Africa</p>
+                        <h5 class="card-title">Mount Kilimanjaro</h5>
+                        <p class="card-text">The tallest peak in Africa, offering breathtaking views and a challenging trek.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#kilimanjaroModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Modal for Mount Kilimanjaro -->
+            <div class="modal fade" id="kilimanjaroModal" tabindex="-1" role="dialog" aria-labelledby="kilimanjaroModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="kilimanjaroModalLabel">Mount Kilimanjaro</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Trekking up Mount Kilimanjaro is one of the most iconic hiking experiences, reaching Africa’s highest peak.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 5. The Great Wall of China -->
+<div class="col-md-4">
+    <div class="card hike-card">
+        <img src="https://cdn.britannica.com/54/122154-050-4DA0F697/Great-Wall-of-China.jpg" class="card-img-top" alt="Great Wall of China">
+        <div class="card-body">
+            <p class="text-muted">China • Beijing</p>
+            <h5 class="card-title">The Great Wall of China</h5>
+            <p class="card-text">The Great Wall offers a unique hike along one of the world’s most famous landmarks, with breathtaking views.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#greatWallModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for The Great Wall of China -->
+<div class="modal fade" id="greatWallModal" tabindex="-1" role="dialog" aria-labelledby="greatWallModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="greatWallModalLabel">The Great Wall of China</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Hiking along the Great Wall of China is a journey through history, offering unique views of one of the world’s most iconic structures.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+            <div class="col-md-4">
+                <div class="card hike-card">
+                    <img src="https://lp-cms-production.imgix.net/features/2012/05/Incatrail1_peru-ad42580ed5d9.jpg" class="card-img-top" alt="Inca Trail">
+                    <div class="card-body">
+                        <p class="text-muted">Peru • Andes Mountains</p>
+                        <h5 class="card-title">Inca Trail</h5>
+                        <p class="card-text">A historic hike that takes you through stunning landscapes and ancient ruins leading to Machu Picchu.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#incaTrailModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Modal for Inca Trail -->
+            <div class="modal fade" id="incaTrailModal" tabindex="-1" role="dialog" aria-labelledby="incaTrailModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="incaTrailModalLabel">Inca Trail</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            The Inca Trail is an ancient route leading to Machu Picchu, offering hikers a combination of culture and beauty.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 4. Torres del Paine Circuit -->
+            <div class="col-md-4">
+                <div class="card hike-card">
+                    <img src="https://i.pinimg.com/originals/2e/57/f7/2e57f7e8b8e0fff91cb7d5549296d1ce.jpg" class="card-img-top" alt="Torres del Paine">
+                    <div class="card-body">
+                        <p class="text-muted">Chile • Patagonia</p>
+                        <h5 class="card-title">Torres del Paine</h5>
+                        <p class="card-text">A challenging trek through the wild landscapes of Patagonia, known for its towering peaks and glaciers.</p>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#torresPaineModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Modal for Torres del Paine -->
+            <div class="modal fade" id="torresPaineModal" tabindex="-1" role="dialog" aria-labelledby="torresPaineModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="torresPaineModalLabel">Torres del Paine</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Torres del Paine in Patagonia offers a spectacular hiking experience with stunning views of glaciers, peaks, and lakes.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script>
+    // Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+
+</script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+        /* Hero Section with Video */
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Featured Section Styling */
+        .featured-section {
+            text-align: center;
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .featured-section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background-color: #333;
+            margin: 0 auto 30px auto;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-container {
+                gap: 20px;
+            }
+
+            .logo-container img {
+                max-height: 40px;
+            }
+        }
+        #explore-section .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #explore-section .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        #travel-guides .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#travel-guides .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Add hover effect to the cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Add hover effect for the buttons (optional) */
+.card .btn {
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #ff5722; /* Change the button color on hover */
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Align dropdown menu properly */
+}
+
+/* Style adjustments for smoother interaction */
+.nav-item.dropdown:hover > .nav-link {
+    color: #ff5722; /* Highlight active menu item */
+}
+
+/* Match dropdown menu background to navbar */
+.navbar-custom .dropdown-menu {
+    background-color: #333; /* Same color as the navbar */
+    border: none; /* Remove border */
+}
+
+/* Change dropdown item text color */
+.navbar-custom .dropdown-item {
+    color: #fff; /* White text color */
+}
+
+/* Change dropdown item hover background and text color */
+.navbar-custom .dropdown-item:hover {
+    background-color: #f08a24; /* Highlight background color */
+    color: #fff; /* Keep text white */
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+
+            <!-- Dropdown for Categories -->
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="categoriesDropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center text-white">
+        <video autoplay muted loop id="video-background">
+            <source src="https://videos.pexels.com/video-files/4205697/4205697-uhd_2560_1440_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="container">
+            <h2>EXPLORE. DREAM. DISCOVER.</h2>
+            <h2>IN ASIA</h2>
+            <a href="blog.html" class="btn btn-dark mt-3">START EXPLORING</a>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured-section">
+        <h2>Featured</h2>
+        <div class="divider"></div>
+        <div class="logo-container">
+            <img src="https://www.iolanipalace.org/wp-content/uploads/USA-Today-logo.jpg" alt="USA Today Logo" title="USA Today">
+            <img src="https://logos-world.net/wp-content/uploads/2024/01/NBC-News-Logo-1986.png" alt="NBC News Logo" title="NBC News">
+            <img src="http://logos-download.com/wp-content/uploads/2016/05/Time_logo_red.png" alt="Time Logo" title="Time">
+            <img src="https://bbcnews.bbcstudios.com/media/5288/bbc_chameleonlight_travel_tile_rgb_1000x1000-1.png" alt="BBC Travel Logo" title="BBC Travel">
+            <img src="https://logowik.com/content/uploads/images/travel-leisure7011.logowik.com.webp" alt="Travel + Leisure Logo" title="Travel + Leisure">
+        </div>
+    </section>
+    
+<!-- 3 Columns Section -->
+<section id="explore-section" class="container py-5">
+    <div class="row text-center">
+        <!-- Travel Blog Column -->
+        <div class="col-md-4 mb-4">
+            <a href="blog.html" class="card border-0 shadow-sm text-decoration-none text-dark">
+                <img src="https://www.designveloper.com/wp-content/uploads/2022/04/travel-blog-guide.jpeg" class="card-img-top" alt="Travel Blog">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Travel Blog</h5>
+                    <p class="card-text">Discover travel tips, personal stories, and guides on the most exciting destinations across Asia.</p>
+                </div>
+            </a>
+        </div>
+        <!-- Destinations Column -->
+        <div class="col-md-4 mb-4">
+            <a href="destinations.html" class="card border-0 shadow-sm text-decoration-none text-dark">
+                <img src="https://www.winetraveler.com/wp-content/uploads/2022/06/best-wine-travel-destinations-to-visit.jpg" class="card-img-top" alt="Destinations">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Destinations</h5>
+                    <p class="card-text">Explore the top destinations in Asia, from bustling cities to serene beaches and cultural landmarks.</p>
+                </div>
+            </a>
+        </div>
+        <!-- About Column -->
+        <div class="col-md-4 mb-4">
+            <a href="about.html" class="card border-0 shadow-sm text-decoration-none text-dark">
+                <img src="i.jpg" class="card-img-top" alt="About Us">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">About</h5>
+                    <p class="card-text">Learn more about "The Asia Travel Guy" and how this blog aims to inspire your next adventure.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Thanks for Looking Section -->
+<section id="thanks-section" class="container py-5">
+    <div class="row text-center">
+        <!-- Image Column -->
+        <div class="col-md-6 mb-4">
+            <img src="i.jpg" class="img-fluid" alt="Thank You Image">
+        </div>
+        <div class="col-md-6 mb-4">
+            <h2>Thanks for Looking!</h2>
+            <p>Hello! I'm Jheneel Klein Montero, also known as "The Asia Travel Guy." I'm passionate about discovering the wonders of Asia and sharing my experiences with you. Through this blog, I aim to inspire fellow travelers to explore the diverse cultures, stunning landscapes, and hidden gems across the continent.</p>
+            <p>Whether you're planning your next adventure or simply daydreaming about faraway places, I'm here to provide you with practical travel tips, personal stories, and in-depth guides. From bustling city streets to tranquil beaches, Asia has something for every type of traveler. My goal is to make your travel dreams come true by offering you inspiration, helpful advice, and the latest travel trends.</p>
+            <p>Stay tuned for more stories, tips, and insights, and remember: the world is too big to stay in one place. Keep exploring!</p>
+            <!-- Read More Button -->
+            <a href="about.html" class="btn btn-primary mb-3">Read More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Travel Guides Section -->
+<section id="travel-guides" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Popular Travel Blog Posts & Guides</h2>
+        <p class="text-center mb-5">Focusing on must-see destinations and experiences across Asia</p>
+        
+        <div class="row">
+            <!-- Guide 1 -->
+            <div class="col-md-4 mb-4">
+                <a href="egypt.html" class="card-link">
+                    <div class="card">
+                        <img src="https://s27363.pcdn.co/wp-content/uploads/2020/04/Camel-Ride-1024x683.jpg.optimal.jpg" class="card-img-top" alt="How to Visit the Pyramids in Egypt">
+                        <div class="card-body">
+                            <h5 class="card-title">How to Visit the Pyramids in Egypt</h5>
+                            <p class="card-text">A complete guide to exploring the ancient Pyramids of Giza and uncovering Egypt's rich history.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 2 -->
+            <div class="col-md-4 mb-4">
+                <a href="nusa.html" class="card-link">
+                    <div class="card">
+                        <img src="https://resources.thomascook.in/images/holidays/sightSeeing/89510_Nusa_Penida_Island_Indonesia_850.jpg" class="card-img-top" alt="Nusa Penida Island Guide for Bali">
+                        <div class="card-body">
+                            <h5 class="card-title">Nusa Penida Island Guide for Bali</h5>
+                            <p class="card-text">Discover the scenic beauty and hidden spots on Bali’s Nusa Penida Island.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 3 -->
+            <div class="col-md-4 mb-4">
+                <a href="japan.html" class="card-link">
+                    <div class="card">
+                        <img src="https://theplanetd.com/images/Top-Things-to-do-in-Kyoto-Japan.jpg" class="card-img-top" alt="22 Best Things to Do in Japan">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Things to Do in Japan</h5>
+                            <p class="card-text">A curated list of the top experiences in Japan, from bustling cities to serene temples.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 5 -->
+            <div class="col-md-4 mb-4">
+                <a href="indo.html" class="card-link">
+                    <div class="card">
+                        <img src="https://d22ir9aoo7cbf6.cloudfront.net/wp-content/uploads/sites/4/2019/11/Tukad-Cepung-Waterfall-in-Ubud-Bali-Indonesia-1.jpg" class="card-img-top" alt="18 Best Waterfalls in Indonesia">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Waterfalls in Indonesia</h5>
+                            <p class="card-text">Experience Indonesia’s stunning waterfalls, from jungle cascades to hidden gems.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 6 -->
+            <div class="col-md-4 mb-4">
+                <a href="island.html" class="card-link">
+                    <div class="card">
+                        <img src="https://www.worldtravelguide.net/wp-content/uploads/2019/07/shu-Indonesia-Komodo-National-Park-Hero-1124450636-1440x823.jpg" class="card-img-top" alt="25 Best Islands in Indonesia">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Islands in Indonesia</h5>
+                            <p class="card-text">A guide to Indonesia’s top islands, perfect for beach lovers and island hoppers.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 7 -->
+            <div class="col-md-4 mb-4">
+                <a href="coron.html" class="card-link">
+                    <div class="card">
+                        <img src="https://www.touristsecrets.com/wp-content/uploads/portal_files/touristsecrets_site_posts/2020-11/AdobeStock_269363900.jpeg" class="card-img-top" alt="Coron Palawan Island Guide">
+                        <div class="card-body">
+                            <h5 class="card-title">Coron Palawan Island Guide</h5>
+                            <p class="card-text">An insider’s guide to Coron, Palawan's pristine beaches, and diving spots.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts Section -->
+<section id="blog" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Top Vlog Moments</h2>
+        <div class="row">
+            <!-- Paris Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/dusk-in-the-city-of-lights-paris-france-sydspics-photography.jpg" class="card-img-top" alt="Paris, France">
+                    <div class="card-body">
+                        <h5 class="card-title">Exploring the Charm of Paris</h5>
+                        <p>Discover the hidden gems of the City of Light...</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#parisModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tokyo Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blog.japanwondertravel.com/wp-content/uploads/2016/07/timo-volz-DGsqL2j028E-unsplash-1200x800.jpg" class="card-img-top" alt="Tokyo, Japan">
+                    <div class="card-body">
+                        <h5 class="card-title">Top Attractions in Tokyo</h5>
+                        <p>From temples to neon lights, explore Tokyo’s top spots...</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tokyoModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Santorini Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://sothebysrealty.gr/wp-content/uploads/2016/11/Santorini-sunset-at-dawn-Greece-Sothebys-International-Realty.jpg" class="card-img-top" alt="Santorini, Greece">
+                    <div class="card-body">
+                        <h5 class="card-title">Santorini: A Guide to Stunning Views</h5>
+                        <p>Capture the essence of Santorini in this ultimate guide...</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#santoriniModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bali Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://www.jonnymelon.com/wp-content/uploads/2021/07/Magic-Hills-Bali-72-1440x960.jpg" class="card-img-top" alt="Bali, Indonesia">
+                    <div class="card-body">
+                        <h5 class="card-title">Exploring the Magic of Bali</h5>
+                        <p>Experience the island's temples, beaches, and culture...</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#baliModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bangkok Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://minnethaimaassa.com/wp-content/uploads/2018/11/Bangkok_Thaimaa_07.jpg" class="card-img-top" alt="Bangkok, Thailand">
+                    <div class="card-body">
+                        <h5 class="card-title">A Journey Through Bangkok</h5>
+                        <p>From street food to vibrant temples, explore Bangkok...</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bangkokModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kyoto Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://coolwallpapers.me/picsup/3085739-culture_flowers_gardens_ginkaku-ji-temple_ginkakuji_japan_japanese_kyoto_nature_park_pond_traditional_water.jpg" class="card-img-top" alt="Kyoto, Japan">
+                    <div class="card-body">
+                        <h5 class="card-title">Kyoto: Tradition Meets Nature</h5>
+                        <p>Explore the ancient temples and stunning gardens of Kyoto...</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kyotoModal">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modals for each blog post -->
+
+<!-- Paris Modal -->
+<div class="modal fade" id="parisModal" tabindex="-1" aria-labelledby="parisModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="parisModalLabel">Exploring the Charm of Paris</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Discover the hidden gems of the City of Light, from the iconic Eiffel Tower to the charming cafes along the Seine. This guide will take you through Paris’s famous landmarks, cultural attractions, and local favorites for a complete Parisian experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tokyo Modal -->
+<div class="modal fade" id="tokyoModal" tabindex="-1" aria-labelledby="tokyoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tokyoModalLabel">Top Attractions in Tokyo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>From the historic Senso-ji Temple to the bustling streets of Shibuya, Tokyo offers a mix of traditional culture and modern excitement. Explore Tokyo’s top attractions and experience the unique energy of Japan’s capital.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Santorini Modal -->
+<div class="modal fade" id="santoriniModal" tabindex="-1" aria-labelledby="santoriniModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="santoriniModalLabel">Santorini: A Guide to Stunning Views</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Santorini offers breathtaking views, pristine beaches, and vibrant sunsets. Discover the best places to visit, from the white-washed buildings of Oia to the volcanic beaches, in this ultimate travel guide.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bali Modal -->
+<div class="modal fade" id="baliModal" tabindex="-1" aria-labelledby="baliModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="baliModalLabel">Exploring the Magic of Bali</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Experience the island's temples, beaches, and culture. Bali offers an unforgettable journey through its natural beauty, including stunning beaches, serene rice terraces, and sacred temples. Discover Bali's rich culture and vibrant traditions in this ultimate travel guide.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bangkok Modal -->
+<div class="modal fade" id="bangkokModal" tabindex="-1" aria-labelledby="bangkokModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bangkokModalLabel">A Journey Through Bangkok</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>From street food to vibrant temples, explore Bangkok’s top attractions. Known for its bustling streets, royal palaces, and floating markets, Bangkok offers a perfect mix of ancient traditions and modern vibrancy.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kyoto Modal -->
+<div class="modal fade" id="kyotoModal" tabindex="-1" aria-labelledby="kyotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kyotoModalLabel">Kyoto: Tradition Meets Nature</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Kyoto is the heart of traditional Japan, with its ancient temples, gardens, and tea ceremonies. Explore the natural beauty of Kyoto, from its iconic bamboo forest to its majestic Zen gardens.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Featured Destinations Section -->
+<section id="featured-destinations" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Journey Highlights</h2>
+        <div class="row">
+            <!-- Bali Destination -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://static.thehoneycombers.com/wp-content/uploads/sites/4/2019/08/Ulun-Danu-Beratan-in-Bedugul-Bali-Indonesia-.jpg" class="card-img-top" alt="Bali, Indonesia">
+                    <div class="card-body">
+                        <h5 class="card-title">Bali, Indonesia</h5>
+                        <p>Experience serene beaches, vibrant culture, and stunning landscapes in Bali.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#baliModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Switzerland Destination -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://deih43ym53wif.cloudfront.net/zermatt-matterhorn-switzerland-shutterstock_1298208013_44fea015e5.jpeg" class="card-img-top" alt="Switzerland">
+                    <div class="card-body">
+                        <h5 class="card-title">Switzerland</h5>
+                        <p>Discover breathtaking mountain views, luxury ski resorts, and charming towns.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#switzerlandModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maldives Destination -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2021/08/best-all-inclusive-resorts-in-the-Maldives-2.jpg?fit=3973%2C2235&ssl=1" class="card-img-top" alt="Maldives">
+                    <div class="card-body">
+                        <h5 class="card-title">Maldives</h5>
+                        <p>Escape to the Maldives for crystal-clear waters, luxurious resorts, and underwater adventures.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#maldivesModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kyoto Destination (New) -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://www.tripsavvy.com/thmb/e5wZDX6HW-JmfA8Yu0KEbCZ3zLo=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-530105220-5c337bae46e0fb00012fcdfb.jpg" class="card-img-top" alt="Kyoto, Japan">
+                    <div class="card-body">
+                        <h5 class="card-title">Kyoto, Japan</h5>
+                        <p>Explore ancient temples, beautiful gardens, and traditional tea ceremonies in Kyoto.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kyotoModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bangkok Destination (New) -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://www.roadaffair.com/wp-content/uploads/2017/10/bangkok-thailand-shutterstock_300284237.jpg" class="card-img-top" alt="Bangkok, Thailand">
+                    <div class="card-body">
+                        <h5 class="card-title">Bangkok, Thailand</h5>
+                        <p>Visit vibrant street markets, ancient temples, and enjoy authentic Thai cuisine in Bangkok.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bangkokModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seoul Destination (New) -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://wallpapercave.com/wp/wp311577.jpg" class="card-img-top" alt="Seoul, South Korea">
+                    <div class="card-body">
+                        <h5 class="card-title">Seoul, South Korea</h5>
+                        <p>Discover Seoul’s blend of modern technology and rich cultural heritage.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#seoulModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modals for each destination -->
+
+<!-- Bali Modal -->
+<div class="modal fade" id="baliModal" tabindex="-1" aria-labelledby="baliModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="baliModalLabel">Bali, Indonesia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Experience serene beaches, vibrant culture, and stunning landscapes in Bali. Whether you're exploring Ubud's lush forests, enjoying the beaches of Kuta, or visiting the famous temples, Bali offers a diverse and unforgettable experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Switzerland Modal -->
+<div class="modal fade" id="switzerlandModal" tabindex="-1" aria-labelledby="switzerlandModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="switzerlandModalLabel">Switzerland</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Discover breathtaking mountain views, luxury ski resorts, and charming towns. Switzerland is perfect for nature lovers and adventure seekers alike, with beautiful landscapes ranging from the Swiss Alps to serene lakes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Maldives Modal -->
+<div class="modal fade" id="maldivesModal" tabindex="-1" aria-labelledby="maldivesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="maldivesModalLabel">Maldives</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Escape to the Maldives for crystal-clear waters, luxurious resorts, and underwater adventures. Perfect for honeymooners and families, the Maldives promises relaxation and unique experiences in its idyllic setting.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kyoto Modal -->
+<div class="modal fade" id="kyotoModal" tabindex="-1" aria-labelledby="kyotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kyotoModalLabel">Kyoto, Japan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Kyoto is famous for its ancient temples, beautiful gardens, and traditional tea ceremonies. Explore serene locations like the Golden Pavilion, the famous Fushimi Inari Shrine, and the bamboo forest in Arashiyama.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bangkok Modal -->
+<div class="modal fade" id="bangkokModal" tabindex="-1" aria-labelledby="bangkokModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bangkokModalLabel">Bangkok, Thailand</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Bangkok is Thailand's vibrant capital, with bustling street markets, ornate temples, and a lively nightlife scene. Don't miss a visit to the Grand Palace, Wat Pho, and exploring the Chatuchak weekend market.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Seoul Modal (New) -->
+<div class="modal fade" id="seoulModal" tabindex="-1" aria-labelledby="seoulModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="seoulModalLabel">Seoul, South Korea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Seoul, South Korea's capital, offers a perfect mix of modernity and tradition. Explore historic palaces like Gyeongbokgung, shop in vibrant districts like Myeongdong, and indulge in delicious Korean cuisine.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modals for each blog post -->
+
+<!-- Paris Modal -->
+<div class="modal fade" id="parisModal" tabindex="-1" aria-labelledby="parisModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="parisModalLabel">Exploring the Charm of Paris</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Discover the hidden gems of the City of Light, from the iconic Eiffel Tower to the charming cafes along the Seine. This guide will take you through Paris’s famous landmarks, cultural attractions, and local favorites for a complete Parisian experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tokyo Modal -->
+<div class="modal fade" id="tokyoModal" tabindex="-1" aria-labelledby="tokyoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tokyoModalLabel">Top Attractions in Tokyo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>From the historic Senso-ji Temple to the bustling streets of Shibuya, Tokyo offers a mix of traditional culture and modern excitement. Explore Tokyo’s top attractions and experience the unique energy of Japan’s capital.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Santorini Modal -->
+<div class="modal fade" id="santoriniModal" tabindex="-1" aria-labelledby="santoriniModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="santoriniModalLabel">Santorini: A Guide to Stunning Views</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Santorini offers breathtaking views, pristine beaches, and vibrant sunsets. Discover the best places to visit, from the white-washed buildings of Oia to the volcanic beaches, in this ultimate travel guide.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+function submitForm(event) {
+    event.preventDefault(); // Prevents the form from submitting the traditional way
+
+    // Display success message
+    document.getElementById("successMessage").style.display = "block";
+
+    // Clear the form fields
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+
+    return false; // Prevents form submission
+}
+
+// Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+
+</script>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Remove body padding to avoid overlap with fixed navbar */
+        body {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+            margin-bottom: 0;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+        /* Hero Section with Video */
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            padding-top: 100px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            color: #333;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        .hero {
+            background: url('/japan.jpg') no-repeat center center;
+            background-size: cover;
+            color: rgb(105, 84, 84);
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .container {
+            padding: 30px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+        }
+        .card-body p {
+            font-size: 1rem;
+        }
+        .divider {
+            width: 50px;
+            height: 3px;
+            background-color: #000;
+            margin: 20px auto;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+                /* Enable dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Align dropdown menu properly */
+}
+
+/* Style adjustments for smoother interaction */
+.nav-item.dropdown:hover > .nav-link {
+    color: #ff5722; /* Highlight active menu item */
+}
+
+/* Match dropdown menu background to navbar */
+.navbar-custom .dropdown-menu {
+    background-color: #333; /* Same color as the navbar */
+    border: none; /* Remove border */
+}
+
+/* Change dropdown item text color */
+.navbar-custom .dropdown-item {
+    color: #fff; /* White text color */
+}
+
+/* Change dropdown item hover background and text color */
+.navbar-custom .dropdown-item:hover {
+    background-color: #f08a24; /* Highlight background color */
+    color: #fff; /* Keep text white */
+}
+    </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+
+            <!-- Dropdown for Categories -->
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="categoriesDropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Best Things to Do in Japan</h1>
+        <p>Discover the rich culture, nature, and modern wonders of Japan.</p>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="container">
+        <h2>Top Attractions in Japan</h2>
+        <div class="divider"></div>
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://a.cdn-hotels.com/gdcs/production198/d485/b83e033e-35df-4169-a967-7c849d7a7e5f.jpg" class="card-img-top" alt="Kyoto Temples">
+                    <div class="card-body">
+                        <h5 class="card-title">Visit Kyoto’s Temples</h5>
+                        <p class="card-text">Kyoto is known for its ancient temples, stunning gardens, and beautiful traditional tea houses. Don’t miss the Golden Pavilion or the Fushimi Inari Shrine.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mount Fuji -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://i.natgeofe.com/n/2bd42d61-21f0-4496-ae2d-cd0d219418de/climbing-mount-fuji-japan01.jpg" class="card-img-top" alt="Mount Fuji">
+                    <div class="card-body">
+                        <h5 class="card-title">Hike Mount Fuji</h5>
+                        <p class="card-text">The iconic Mount Fuji is a must-see. Hiking to the summit offers breathtaking views, and the surrounding area is perfect for exploring nature.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tokyo Disneyland -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://thebroadlife.com/wp-content/uploads/2016/09/tokyo-disneyland-japan-entrance-path-thebroadlife-travel-wanderlust.jpg" class="card-img-top" alt="Tokyo Disneyland">
+                    <div class="card-body">
+                        <h5 class="card-title">Explore Tokyo Disneyland</h5>
+                        <p class="card-text">For families and Disney fans, Tokyo Disneyland offers fun-filled rides, entertainment, and magical experiences for all ages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Unmissable Japanese Experiences</h2>
+        <div class="divider"></div>
+        <div class="row">
+            <!-- Sushi Making Class -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="http://www.parmesanprincess.com/wp-content/uploads/2015/07/IMG_31061-1024x768.jpg" class="card-img-top" alt="Sushi Making Class">
+                    <div class="card-body">
+                        <h5 class="card-title">Take a Sushi Making Class</h5>
+                        <p class="card-text">Learn the art of sushi making in Tokyo, where chefs will teach you the traditional techniques of creating this iconic Japanese dish.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onsen Bath -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="http://kusuyama.jp/wp-content/uploads/Takaragawa_Onsen-2.jpg" class="card-img-top" alt="Onsen Bath">
+                    <div class="card-body">
+                        <h5 class="card-title">Relax in an Onsen</h5>
+                        <p class="card-text">Japan is famous for its natural hot springs, called onsen. Experience the ultimate relaxation at one of Japan’s renowned onsen resorts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cherry Blossom Viewing -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://preview.redd.it/j23mhgke0i011.jpg?auto=webp&s=fabc74ba1b1320e4e81feb89297c6ecbad402c7b" class="card-img-top" alt="Cherry Blossom Viewing">
+                    <div class="card-body">
+                        <h5 class="card-title">See Cherry Blossoms in Full Bloom</h5>
+                        <p class="card-text">Visit Japan in spring for the breathtaking cherry blossom season. It's a stunning sight as parks and streets turn pink with blossoms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Explore Japan's Unique Culture</h2>
+        <div class="divider"></div>
+        <p>Japan's rich cultural heritage is seen in its temples, food, festivals, and traditions. From tea ceremonies to calligraphy workshops, there’s always something to learn and experience.</p>
+        <p>Whether you're into history, adventure, food, or shopping, Japan offers an unforgettable journey that will leave you wanting more!</p>
+    </section>
+
+    <script>
+        // Enable dropdown on hover for touch devices
+    document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+        dropdown.addEventListener('mouseenter', function () {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.add('show');
+        });
+    
+        dropdown.addEventListener('mouseleave', function () {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.remove('show');
+        });
+    });
+    
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

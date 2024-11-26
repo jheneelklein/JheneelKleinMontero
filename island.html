@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Island</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Remove body padding to avoid overlap with fixed navbar */
+        body {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+            margin-bottom: 0;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+        .hero {
+            background: url('indonesia-island-hero.jpg') no-repeat center center;
+            background-size: cover;
+            color: rgb(84, 49, 49);
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .container {
+            padding: 30px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+        }
+        .card-body p {
+            font-size: 1rem;
+        }
+        .divider {
+            width: 50px;
+            height: 3px;
+            background-color: #000;
+            margin: 20px auto;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        /* Enable dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Align dropdown menu properly */
+}
+
+/* Style adjustments for smoother interaction */
+.nav-item.dropdown:hover > .nav-link {
+    color: #ff5722; /* Highlight active menu item */
+}
+
+/* Match dropdown menu background to navbar */
+.navbar-custom .dropdown-menu {
+    background-color: #333; /* Same color as the navbar */
+    border: none; /* Remove border */
+}
+
+/* Change dropdown item text color */
+.navbar-custom .dropdown-item {
+    color: #fff; /* White text color */
+}
+
+/* Change dropdown item hover background and text color */
+.navbar-custom .dropdown-item:hover {
+    background-color: #f08a24; /* Highlight background color */
+    color: #fff; /* Keep text white */
+}
+    </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+
+            <!-- Dropdown for Categories -->
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="categoriesDropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Best Islands in Indonesia</h1>
+        <p>Explore the beautiful islands of Indonesia, from the well-known to the hidden gems.</p>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="container">
+        <h2>Top Islands to Visit in Indonesia</h2>
+        <div class="divider"></div>
+        <div class="row">
+            <!-- Bali -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://www.travellingking.com/wp-content/uploads/2017/11/tobias-winkelmann-367873.jpg" class="card-img-top" alt="Bali Island">
+                    <div class="card-body">
+                        <h5 class="card-title">Bali</h5>
+                        <p class="card-text">Known for its rich culture, stunning beaches, and vibrant nightlife, Bali is one of the most famous islands in Indonesia and a top destination for travelers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Komodo Island -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://cdn.getyourguide.com/img/location/5cc69ce792af4.jpeg/88.jpg" class="card-img-top" alt="Komodo Island">
+                    <div class="card-body">
+                        <h5 class="card-title">Komodo Island</h5>
+                        <p class="card-text">Famous for the Komodo Dragons, Komodo Island offers stunning views, rugged landscapes, and beautiful beaches, making it a UNESCO World Heritage site.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gili Islands -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://forsomethingmore.com/wp-content/uploads/2020/06/Gili-Islands-Bali-COVER.jpg" class="card-img-top" alt="Gili Islands">
+                    <div class="card-body">
+                        <h5 class="card-title">Gili Islands</h5>
+                        <p class="card-text">A tropical paradise known for its crystal-clear waters, white sandy beaches, and vibrant marine life, ideal for diving, snorkeling, and relaxing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Hidden Gems: Lesser-Known Islands</h2>
+        <div class="divider"></div>
+        <div class="row">
+            <!-- Raja Ampat -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://lp-cms-production.imgix.net/2019-06/167330316_full.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4" class="card-img-top" alt="Raja Ampat">
+                    <div class="card-body">
+                        <h5 class="card-title">Raja Ampat</h5>
+                        <p class="card-text">Located in Papua, Raja Ampat is famous for its breathtaking beauty, crystal-clear waters, and one of the most biodiverse marine environments in the world.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flores Island -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://i.redd.it/oysqttuvslg51.jpg" class="card-img-top" alt="Flores Island">
+                    <div class="card-body">
+                        <h5 class="card-title">Flores Island</h5>
+                        <p class="card-text">Known for its pristine beaches, active volcanoes, and traditional villages, Flores is a perfect destination for adventure seekers and cultural enthusiasts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sumbawa Island -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://adventureridersindonesia.com/wp-content/uploads/2020/01/kenawa-island.jpg" class="card-img-top" alt="Sumbawa Island">
+                    <div class="card-body">
+                        <h5 class="card-title">Sumbawa Island</h5>
+                        <p class="card-text">A quieter, less touristy alternative to Bali, Sumbawa offers beautiful beaches, ideal for surfing and hiking to its volcanoes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Experience the Natural Wonders of Indonesia</h2>
+        <div class="divider"></div>
+        <p>From the bustling streets of Bali to the remote beauty of Raja Ampat, Indonesia is home to some of the world's most beautiful and diverse islands. Whether you want to relax on pristine beaches, hike volcanoes, or explore vibrant marine life, Indonesia offers something for everyone.</p>
+        <p>So pack your bags and get ready to explore these incredible islands, each with its own unique charm and natural beauty!</p>
+    </section>
+
+    <script>
+        // Enable dropdown on hover for touch devices
+    document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+        dropdown.addEventListener('mouseenter', function () {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.add('show');
+        });
+    
+        dropdown.addEventListener('mouseleave', function () {
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) menu.classList.remove('show');
+        });
+    });
+    
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

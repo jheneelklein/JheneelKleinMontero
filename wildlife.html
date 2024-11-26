@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+        /* Wildlife Cards */
+        .wildlife-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .wildlife-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Read More Button */
+        .card .btn {
+            background-color: #f08a24;
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn:hover {
+            background-color: #ff5722;
+        }
+
+        .text-orange {
+            color: #f08a24;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Enable dropdown on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        /* Style adjustments for smoother interaction */
+        .nav-item.dropdown:hover > .nav-link {
+            color: #ff5722;
+        }
+
+        /* Match dropdown menu background to navbar */
+        .navbar-custom .dropdown-menu {
+            background-color: #333;
+            border: none;
+        }
+
+        /* Change dropdown item text color */
+        .navbar-custom .dropdown-item {
+            color: #fff;
+        }
+
+        /* Change dropdown item hover background and text color */
+        .navbar-custom .dropdown-item:hover {
+            background-color: #f08a24;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Wildlife List -->
+<div class="container my-5" style="padding-top: 20px;">
+    <h2 class="text-center text-orange my-4">Wildlife in Asia</h2>
+    <div class="row">
+        <!-- Bengal Tiger -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://miro.medium.com/v2/resize:fit:755/0*a8QlwKSiRrTMUZKd.jpg" class="card-img-top" alt="Bengal Tiger">
+                <div class="card-body">
+                    <p class="text-muted">India • Sundarbans</p>
+                    <h5 class="card-title">The Majestic Bengal Tiger</h5>
+                    <p class="card-text">The Bengal Tiger is one of the most iconic animals in Asia, known for its strength and beauty.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#bengalTigerModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Bengal Tiger -->
+        <div class="modal fade" id="bengalTigerModal" tabindex="-1" role="dialog" aria-labelledby="bengalTigerModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bengalTigerModalLabel">The Majestic Bengal Tiger</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Bengal Tiger, known for its power and beauty, can be found in the Sundarbans of India.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orangutan -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://www.treehugger.com/thmb/0VuS6S4d_JMq_270-w2APeBTcW4=/2121x1414/filters:fill(auto,1)/GettyImages-107246950-48773102b7e0453c8011a7816886c947.jpg" class="card-img-top" alt="Orangutan">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia • Borneo</p>
+                    <h5 class="card-title">The Endangered Orangutan</h5>
+                    <p class="card-text">The Orangutan, known for its intelligence, is critically endangered due to habitat loss.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#orangutanModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Orangutan -->
+        <div class="modal fade" id="orangutanModal" tabindex="-1" role="dialog" aria-labelledby="orangutanModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="orangutanModalLabel">The Endangered Orangutan</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Orangutans are critically endangered and are native to the islands of Borneo and Sumatra.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asian Elephant -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://www.thoughtco.com/thmb/q4t3OQkJIwiyTHnV4Pve34f4Ygo%3D/2250x1500/filters:fill(auto%2C1)/167003501-56a0089e5f9b58eba4ae8f93.jpg" class="card-img-top" alt="Asian Elephant">
+                <div class="card-body">
+                    <p class="text-muted">Sri Lanka • Udawalawe</p>
+                    <h5 class="card-title">The Magnificent Asian Elephant</h5>
+                    <p class="card-text">The Asian elephant, smaller than its African cousin, is revered in many cultures and is a symbol of strength.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#asianElephantModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Asian Elephant -->
+        <div class="modal fade" id="asianElephantModal" tabindex="-1" role="dialog" aria-labelledby="asianElephantModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="asianElephantModalLabel">The Magnificent Asian Elephant</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Asian elephant is an important cultural and religious symbol across Asia and is a key player in its ecosystem.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Wildlife Species -->
+
+        <!-- Snow Leopard -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://usercontent2.hubstatic.com/13686759_f1024.jpg" class="card-img-top" alt="Snow Leopard">
+                <div class="card-body">
+                    <p class="text-muted">Himalayas • Central Asia</p>
+                    <h5 class="card-title">The Elusive Snow Leopard</h5>
+                    <p class="card-text">Snow leopards are known for their stealth and their ability to survive in the harshest mountain environments.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#snowLeopardModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Snow Leopard -->
+        <div class="modal fade" id="snowLeopardModal" tabindex="-1" role="dialog" aria-labelledby="snowLeopardModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="snowLeopardModalLabel">The Elusive Snow Leopard</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Snow leopards live in the rugged mountains of Central Asia and are known for their elusive behavior and camouflage.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Komodo Dragon -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://good-nature-blog-uploads.s3.amazonaws.com/uploads/2022/05/shutterstock_347277923-1280x640.jpg" class="card-img-top" alt="Komodo Dragon">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia • Komodo Island</p>
+                    <h5 class="card-title">The Fierce Komodo Dragon</h5>
+                    <p class="card-text">The Komodo Dragon is the world's largest lizard, known for its formidable hunting skills and venomous bite.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#komodoDragonModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Komodo Dragon -->
+        <div class="modal fade" id="komodoDragonModal" tabindex="-1" role="dialog" aria-labelledby="komodoDragonModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="komodoDragonModalLabel">The Fierce Komodo Dragon</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Komodo Dragon is found on the Indonesian islands and is known for its immense size and predatory nature.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Giant Panda -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://www.vegan-news.net/wp-content/uploads/2023/02/Conservation-Status-review.jpg" class="card-img-top" alt="Giant Panda">
+                <div class="card-body">
+                    <p class="text-muted">China • Sichuan</p>
+                    <h5 class="card-title">The Endearing Giant Panda</h5>
+                    <p class="card-text">The Giant Panda is beloved for its playful nature and its distinctive black-and-white markings.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#giantPandaModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Giant Panda -->
+        <div class="modal fade" id="giantPandaModal" tabindex="-1" role="dialog" aria-labelledby="giantPandaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="giantPandaModalLabel">The Endearing Giant Panda</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Giant Panda, native to China, is an endangered species known for its bamboo diet and gentle nature.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Red Panda -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://facts.net/wp-content/uploads/2020/08/AdobeStock_209028852.jpeg" class="card-img-top" alt="Red Panda">
+                <div class="card-body">
+                    <p class="text-muted">Himalayas • Nepal</p>
+                    <h5 class="card-title">The Adorable Red Panda</h5>
+                    <p class="card-text">The Red Panda is a small, arboreal mammal known for its reddish-brown fur and playful demeanor.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#redPandaModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Red Panda -->
+        <div class="modal fade" id="redPandaModal" tabindex="-1" role="dialog" aria-labelledby="redPandaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="redPandaModalLabel">The Adorable Red Panda</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Red Pandas are native to the Eastern Himalayas and are known for their distinctive red fur and tail.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indian Peacock -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://a-z-animals.com/media/2023/01/shutterstock_1147396844.jpg" class="card-img-top" alt="Indian Peacock">
+                <div class="card-body">
+                    <p class="text-muted">India • All Over</p>
+                    <h5 class="card-title">The Beautiful Indian Peacock</h5>
+                    <p class="card-text">The Indian Peacock is famous for its stunning plumage and its symbolic significance in Indian culture.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#indianPeacockModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Indian Peacock -->
+        <div class="modal fade" id="indianPeacockModal" tabindex="-1" role="dialog" aria-labelledby="indianPeacockModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="indianPeacockModalLabel">The Beautiful Indian Peacock</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Indian Peacock is famous for its stunning tail feathers, which are displayed during mating rituals.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Great Hornbill -->
+        <div class="col-md-4">
+            <div class="card wildlife-card">
+                <img src="https://lh5.googleusercontent.com/OE3jQiiqXL1-kr6WkGT5xqUtRwbBor5uEVOM4Vq3fFkDlsZFMo9Xr1haR4V1LbmjhRfDUDN1iJNzaDZUpHR-ZTKRr3d6vhpMGvKOXfl3-2ixan_llM-PVuLvPlaThv_8B9-nx3DqPk47aj668FXBnQ" class="card-img-top" alt="Great Hornbill">
+                <div class="card-body">
+                    <p class="text-muted">India • Southeast Asia</p>
+                    <h5 class="card-title">The Majestic Great Hornbill</h5>
+                    <p class="card-text">The Great Hornbill is known for its large size and impressive casque, making it one of the most recognizable birds in Asia.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#greatHornbillModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Great Hornbill -->
+        <div class="modal fade" id="greatHornbillModal" tabindex="-1" role="dialog" aria-labelledby="greatHornbillModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="greatHornbillModalLabel">The Majestic Great Hornbill</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Great Hornbill is known for its distinctively large yellow-and-black bill, and it is found across Southeast Asia.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asian Black Bear -->
+<div class="col-md-4">
+    <div class="card wildlife-card">
+        <img src="https://res.cloudinary.com/roundglass/image/upload/v1610348272/roundglass/sustain/himalayan-black-bear_Dhritiman-mukherjee_q2yk0r.jpg" class="card-img-top" alt="Asian Black Bear">
+        <div class="card-body">
+            <p class="text-muted">Southeast Asia • Himalayas</p>
+            <h5 class="card-title">The Asian Black Bear</h5>
+            <p class="card-text">The Asian Black Bear, also known as the moon bear, is easily identified by the white crescent shape on its chest.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#asianBlackBearModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Asian Black Bear -->
+<div class="modal fade" id="asianBlackBearModal" tabindex="-1" role="dialog" aria-labelledby="asianBlackBearModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="asianBlackBearModalLabel">The Asian Black Bear</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                The Asian Black Bear, known for its distinctive white crescent-shaped chest mark, is found in the forests of Southeast Asia and the Himalayas.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Japanese Macaque -->
+<div class="col-md-4">
+    <div class="card wildlife-card">
+        <img src="https://a-z-animals.com/media/animals/images/original/japanese_macaque_7.jpg" class="card-img-top" alt="Japanese Macaque">
+        <div class="card-body">
+            <p class="text-muted">Japan • Honshu Island</p>
+            <h5 class="card-title">The Japanese Macaque</h5>
+            <p class="card-text">The Japanese Macaque, also known as the snow monkey, is famous for living in the coldest regions of Japan.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#japaneseMacaqueModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Japanese Macaque -->
+<div class="modal fade" id="japaneseMacaqueModal" tabindex="-1" role="dialog" aria-labelledby="japaneseMacaqueModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="japaneseMacaqueModalLabel">The Japanese Macaque</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                The Japanese Macaque, also known as the snow monkey, is famous for its ability to survive in the snow and is found in the cold mountainous regions of Japan.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Malayan Tiger -->
+<div class="col-md-4">
+    <div class="card wildlife-card">
+        <img src="https://s28164.pcdn.co/files/Malayan-Tiger-0155-2199-1920x1080.jpg" class="card-img-top" alt="Malayan Tiger">
+        <div class="card-body">
+            <p class="text-muted">Malaysia • Taman Negara</p>
+            <h5 class="card-title">The Endangered Malayan Tiger</h5>
+            <p class="card-text">The Malayan Tiger is a subspecies of tiger native to the Malay Peninsula, known for its striking coat and powerful presence.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#malayanTigerModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Malayan Tiger -->
+<div class="modal fade" id="malayanTigerModal" tabindex="-1" role="dialog" aria-labelledby="malayanTigerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="malayanTigerModalLabel">The Endangered Malayan Tiger</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                The Malayan Tiger is a subspecies of tiger that is native to the Malay Peninsula and is critically endangered.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sumatran Rhinoceros -->
+<div class="col-md-4">
+    <div class="card wildlife-card">
+        <img src="https://miro.medium.com/max/5696/1*H2ciMMZGT09VFLaan0cSsg.jpeg" class="card-img-top" alt="Sumatran Rhinoceros">
+        <div class="card-body">
+            <p class="text-muted">Indonesia • Sumatra</p>
+            <h5 class="card-title">The Critically Endangered Sumatran Rhinoceros</h5>
+            <p class="card-text">The Sumatran Rhinoceros is one of the smallest rhinos in the world and is critically endangered due to poaching and habitat loss.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#sumatranRhinocerosModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Sumatran Rhinoceros -->
+<div class="modal fade" id="sumatranRhinocerosModal" tabindex="-1" role="dialog" aria-labelledby="sumatranRhinocerosModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sumatranRhinocerosModalLabel">The Critically Endangered Sumatran Rhinoceros</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                The Sumatran Rhinoceros is one of the smallest and rarest rhinoceros species, found in the forests of Indonesia's Sumatra island.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Indian Cobra -->
+<div class="col-md-4">
+    <div class="card wildlife-card">
+        <img src="https://cdn.britannica.com/32/238532-050-A1B99DE8/Indian-cobra-naja-naja-venonmous-snake-reptile.jpg" class="card-img-top" alt="Indian Cobra">
+        <div class="card-body">
+            <p class="text-muted">India • Subcontinent</p>
+            <h5 class="card-title">The Venomous Indian Cobra</h5>
+            <p class="card-text">The Indian Cobra is one of the most venomous snakes in Asia and is widely revered in Indian culture.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#indianCobraModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Indian Cobra -->
+<div class="modal fade" id="indianCobraModal" tabindex="-1" role="dialog" aria-labelledby="indianCobraModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="indianCobraModalLabel">The Venomous Indian Cobra</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                The Indian Cobra is a highly venomous snake found throughout India and is an iconic symbol in Indian mythology and culture.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Asian Small-Clawed Otter -->
+<div class="col-md-4">
+    <div class="card wildlife-card">
+        <img src="https://nationalzoo.si.edu/sites/default/files/animals/asiansmallclawedotter-001.jpg" class="card-img-top" alt="Asian Small-Clawed Otter">
+        <div class="card-body">
+            <p class="text-muted">Southeast Asia • Coastal Areas</p>
+            <h5 class="card-title">The Playful Asian Small-Clawed Otter</h5>
+            <p class="card-text">The Asian Small-Clawed Otter is the smallest otter species in the world, known for its playful nature and family bonds.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#asianSmallClawedOtterModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Asian Small-Clawed Otter -->
+<div class="modal fade" id="asianSmallClawedOtterModal" tabindex="-1" role="dialog" aria-labelledby="asianSmallClawedOtterModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="asianSmallClawedOtterModalLabel">The Playful Asian Small-Clawed Otter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                The Asian Small-Clawed Otter is known for its playful behavior and small size. It is found in the coastal areas of Southeast Asia.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<script>
+    // Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+
+</script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

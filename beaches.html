@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaches</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+        /* Beach Cards */
+        .beach-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .beach-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Read More Button */
+        .card .btn {
+            background-color: #f08a24;
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn:hover {
+            background-color: #ff5722;
+        }
+
+        .text-orange {
+            color: #f08a24;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Enable dropdown on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        /* Style adjustments for smoother interaction */
+        .nav-item.dropdown:hover > .nav-link {
+            color: #ff5722;
+        }
+
+        /* Match dropdown menu background to navbar */
+        .navbar-custom .dropdown-menu {
+            background-color: #333;
+            border: none;
+        }
+
+        /* Change dropdown item text color */
+        .navbar-custom .dropdown-item {
+            color: #fff;
+        }
+
+        /* Change dropdown item hover background and text color */
+        .navbar-custom .dropdown-item:hover {
+            background-color: #f08a24;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Beach List -->
+<div class="container my-5" style="padding-top: 20px;">
+    <h2 class="text-center text-orange my-4">Beaches in Asia</h2>
+    <div class="row">
+        <!-- Maya Bay -->
+        <div class="col-md-4">
+            <div class="card beach-card">
+                <img src="https://lp-cms-production.imgix.net/2021-11/Maya%20Bay%20crowds.jpg?auto=format&q=75" class="card-img-top" alt="Maya Bay">
+                <div class="card-body">
+                    <p class="text-muted">Andaman Sea • Thailand</p>
+                    <h5 class="card-title">Maya Bay In Thailand: The Beach Is Open!</h5>
+                    <p class="card-text">The beach at Maya Bay is one of the most famous and photogenic places in Thailand.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#mayaBayModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Maya Bay -->
+        <div class="modal fade" id="mayaBayModal" tabindex="-1" role="dialog" aria-labelledby="mayaBayModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="mayaBayModalLabel">Maya Bay In Thailand</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Experience the natural beauty of Maya Bay, known for its crystal-clear waters and dramatic limestone cliffs.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- White Beach, Boracay -->
+        <div class="col-md-4">
+            <div class="card beach-card">
+                <img src="http://attracttour.com/wp-content/uploads/2012/12/boracay-beach.jpg" class="card-img-top" alt="White Beach, Boracay">
+                <div class="card-body">
+                    <p class="text-muted">Philippines • Boracay</p>
+                    <h5 class="card-title">White Beach, Boracay</h5>
+                    <p class="card-text">Famous for its white, powdery sand, Boracay's White Beach is a tropical paradise.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#boracayModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Boracay -->
+        <div class="modal fade" id="boracayModal" tabindex="-1" role="dialog" aria-labelledby="boracayModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="boracayModalLabel">White Beach, Boracay</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Boracay's White Beach is one of the most famous beaches in Asia, known for its crystal-clear waters and vibrant nightlife.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- El Nido, Palawan -->
+        <div class="col-md-4">
+            <div class="card beach-card">
+                <img src="https://a.cdn-hotels.com/gdcs/production13/d1585/20120d80-bf76-4553-89f4-0098f94423d8.jpg" class="card-img-top" alt="El Nido, Palawan">
+                <div class="card-body">
+                    <p class="text-muted">Philippines • Palawan</p>
+                    <h5 class="card-title">El Nido, Palawan</h5>
+                    <p class="card-text">Known for its dramatic limestone cliffs, El Nido is a paradise for beach lovers.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#elNidoModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for El Nido -->
+        <div class="modal fade" id="elNidoModal" tabindex="-1" role="dialog" aria-labelledby="elNidoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="elNidoModalLabel">El Nido, Palawan</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        El Nido is famous for its beautiful lagoons, pristine beaches, and exceptional snorkeling opportunities.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Beach 1 -->
+<div class="col-md-4">
+    <div class="card beach-card">
+        <img src="https://a.cdn-hotels.com/gdcs/production125/d570/3bb24ad6-7baf-4721-a49e-0a16e9395bf1.jpg" class="card-img-top" alt="Beach 4">
+        <div class="card-body">
+            <p class="text-muted">Vietnam • Phu Quoc</p>
+            <h5 class="card-title">Phu Quoc Beach</h5>
+            <p class="card-text">Phu Quoc is known for its tranquil beaches and crystal-clear waters, perfect for relaxation.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#phuQuocModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Phu Quoc -->
+<div class="modal fade" id="phuQuocModal" tabindex="-1" role="dialog" aria-labelledby="phuQuocModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="phuQuocModalLabel">Phu Quoc Beach</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Phu Quoc is known for its tranquil beaches and crystal-clear waters, perfect for relaxation, water activities, and scenic views.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Beach 2 -->
+<div class="col-md-4">
+    <div class="card beach-card">
+        <img src="https://www.water-sports-bali.com/wp-content/uploads/2019/02/Mengiat-Beach-Nusa-Dua.jpg" class="card-img-top" alt="Beach 5">
+        <div class="card-body">
+            <p class="text-muted">Indonesia • Bali</p>
+            <h5 class="card-title">Bali's Nusa Dua Beach</h5>
+            <p class="card-text">Nusa Dua offers calm waters, white sandy beaches, and luxurious resorts.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#baliModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Bali -->
+<div class="modal fade" id="baliModal" tabindex="-1" role="dialog" aria-labelledby="baliModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="baliModalLabel">Nusa Dua Beach, Bali</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Nusa Dua in Bali is known for its white sandy beaches, calm waters, and luxury resorts, offering a peaceful getaway.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Beach 3 -->
+<div class="col-md-4">
+    <div class="card beach-card">
+        <img src="https://a.cdn-hotels.com/gdcs/production9/d373/472cd0fd-e139-42de-85a3-536c7559b321.jpg" class="card-img-top" alt="Beach 6">
+        <div class="card-body">
+            <p class="text-muted">Thailand • Phuket</p>
+            <h5 class="card-title">Patong Beach, Phuket</h5>
+            <p class="card-text">Patong is known for its bustling nightlife and lively atmosphere, along with beautiful beach views.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#patongModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Patong Beach -->
+<div class="modal fade" id="patongModal" tabindex="-1" role="dialog" aria-labelledby="patongModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="patongModalLabel">Patong Beach, Phuket</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Patong Beach in Phuket is famous for its vibrant nightlife, with numerous bars, restaurants, and beach activities.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Beach 4 -->
+<div class="col-md-4">
+    <div class="card beach-card">
+        <img src="https://www.roadaffair.com/wp-content/uploads/2018/07/cenang-beach-langkawi-malaysia-shutterstock_319603034.jpg" class="card-img-top" alt="Beach 7">
+        <div class="card-body">
+            <p class="text-muted">Malaysia • Langkawi</p>
+            <h5 class="card-title">Pantai Cenang, Langkawi</h5>
+            <p class="card-text">Pantai Cenang is one of Langkawi's most famous beaches, with a lively atmosphere and water sports.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#pantaiModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Pantai Cenang -->
+<div class="modal fade" id="pantaiModal" tabindex="-1" role="dialog" aria-labelledby="pantaiModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pantaiModalLabel">Pantai Cenang, Langkawi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Pantai Cenang offers a bustling atmosphere, water sports, and beautiful sandy beaches in Langkawi, Malaysia.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Beach 5 -->
+<div class="col-md-4">
+    <div class="card beach-card">
+        <img src="https://flashpacking4life.de/wp-content/uploads/2014/08/Chaweng-Beach-Koh-Samui-Day-Strand.jpg" class="card-img-top" alt="Beach 8">
+        <div class="card-body">
+            <p class="text-muted">Thailand • Koh Samui</p>
+            <h5 class="card-title">Chaweng Beach, Koh Samui</h5>
+            <p class="card-text">Chaweng Beach is one of Koh Samui's most popular beaches, known for its soft sand and vibrant nightlife.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#chawengModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Chaweng Beach -->
+<div class="modal fade" id="chawengModal" tabindex="-1" role="dialog" aria-labelledby="chawengModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="chawengModalLabel">Chaweng Beach, Koh Samui</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Chaweng Beach is known for its lively atmosphere, soft sandy beaches, and vibrant nightlife in Koh Samui.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Beach 6 -->
+<div class="col-md-4">
+    <div class="card beach-card">
+        <img src="https://explore.vacations/wp-content/uploads/2020/09/Unawatuna-Beach-Sri-Lanka-.jpg" class="card-img-top" alt="Beach 9">
+        <div class="card-body">
+            <p class="text-muted">Sri Lanka • Unawatuna</p>
+            <h5 class="card-title">Unawatuna Beach</h5>
+            <p class="card-text">Unawatuna offers golden sandy beaches and a vibrant coral reef, making it a popular spot for snorkeling.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#unawatunaModal">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Unawatuna -->
+<div class="modal fade" id="unawatunaModal" tabindex="-1" role="dialog" aria-labelledby="unawatunaModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="unawatunaModalLabel">Unawatuna Beach, Sri Lanka</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Unawatuna is known for its golden sandy beaches and vibrant coral reefs, ideal for snorkeling and enjoying beach life.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+<script>
+    // Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+
+</script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

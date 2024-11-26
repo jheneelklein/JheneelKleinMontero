@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monuments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+        }
+    
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+    
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+    
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+    
+        /* Monument Cards */
+        .monument-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .monument-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Read More Button */
+        .card .btn {
+            background-color: #f08a24;
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+    
+        .card .btn:hover {
+            background-color: #ff5722;
+        }
+    
+        .text-orange {
+            color: #f08a24;
+        }
+    
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+    
+        /* Enable dropdown on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+    
+        /* Style adjustments for smoother interaction */
+        .nav-item.dropdown:hover > .nav-link {
+            color: #ff5722;
+        }
+    
+        /* Match dropdown menu background to navbar */
+        .navbar-custom .dropdown-menu {
+            background-color: #333;
+            border: none;
+        }
+    
+        /* Change dropdown item text color */
+        .navbar-custom .dropdown-item {
+            color: #fff;
+        }
+    
+        /* Change dropdown item hover background and text color */
+        .navbar-custom .dropdown-item:hover {
+            background-color: #f08a24;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Monument List -->
+<div class="container my-5" style="padding-top: 20px;">
+    <h2 class="text-center text-orange my-4">Famous Monuments in Asia</h2>
+    <div class="row">
+        <!-- Taj Mahal -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="https://i1.wp.com/worldupclose.in/wp-content/uploads/2020/03/taj.jpg" class="card-img-top" alt="Taj Mahal">
+                <div class="card-body">
+                    <p class="text-muted">India • Agra</p>
+                    <h5 class="card-title">Taj Mahal</h5>
+                    <p class="card-text">The Taj Mahal is an iconic symbol of love and one of the most famous monuments in the world.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#tajMahalModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Taj Mahal -->
+        <div class="modal fade" id="tajMahalModal" tabindex="-1" role="dialog" aria-labelledby="tajMahalModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tajMahalModalLabel">Taj Mahal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Taj Mahal, built by Mughal emperor Shah Jahan in memory of his wife, is an architectural marvel and a UNESCO World Heritage site.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Angkor Wat -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="https://globalcastaway.com/wp-content/uploads/2019/11/the-ultimate-guide-for-visiting-Angkor-Wat.jpg" class="card-img-top" alt="Angkor Wat">
+                <div class="card-body">
+                    <p class="text-muted">Cambodia • Siem Reap</p>
+                    <h5 class="card-title">Angkor Wat</h5>
+                    <p class="card-text">The largest religious monument in the world, Angkor Wat is a symbol of Cambodia's cultural and historical heritage.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#angkorWatModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Angkor Wat -->
+        <div class="modal fade" id="angkorWatModal" tabindex="-1" role="dialog" aria-labelledby="angkorWatModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="angkorWatModalLabel">Angkor Wat</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Angkor Wat, built in the 12th century, is a stunning temple complex and one of the greatest architectural masterpieces of the ancient world.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Great Wall of China -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg" class="card-img-top" alt="Great Wall of China">
+                <div class="card-body">
+                    <p class="text-muted">China • Beijing</p>
+                    <h5 class="card-title">Great Wall of China</h5>
+                    <p class="card-text">The Great Wall is one of the longest man-made structures in the world and a symbol of China's strength and perseverance.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#greatWallModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Great Wall of China -->
+        <div class="modal fade" id="greatWallModal" tabindex="-1" role="dialog" aria-labelledby="greatWallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="greatWallModalLabel">Great Wall of China</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Great Wall of China stretches over 13,000 miles and was originally built to protect Chinese states from invaders.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Petronas Twin Towers -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="http://upload.wikimedia.org/wikipedia/commons/0/04/The_Petronas_Twin_Towers_in_Kuala_Lumpur_(Malaysia).JPG" class="card-img-top" alt="Petronas Twin Towers">
+                <div class="card-body">
+                    <p class="text-muted">Malaysia • Kuala Lumpur</p>
+                    <h5 class="card-title">Petronas Twin Towers</h5>
+                    <p class="card-text">The Petronas Twin Towers were the tallest buildings in the world from 1998 to 2004 and remain a significant landmark in Malaysia.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#petronasModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Petronas Twin Towers -->
+        <div class="modal fade" id="petronasModal" tabindex="-1" role="dialog" aria-labelledby="petronasModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="petronasModalLabel">Petronas Twin Towers</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Petronas Twin Towers stand at 452 meters and are connected by a skybridge at the 41st and 42nd floors.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marina Bay Sands -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="https://www.major.travel/portal/media/images/uploads/tours/istock617882378.jpg" class="card-img-top" alt="Marina Bay Sands">
+                <div class="card-body">
+                    <p class="text-muted">Singapore</p>
+                    <h5 class="card-title">Marina Bay Sands</h5>
+                    <p class="card-text">Marina Bay Sands is a futuristic resort that features a unique design with an infinity pool on the rooftop.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#marinaBayModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Marina Bay Sands -->
+        <div class="modal fade" id="marinaBayModal" tabindex="-1" role="dialog" aria-labelledby="marinaBayModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="marinaBayModalLabel">Marina Bay Sands</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Marina Bay Sands is one of the most recognizable landmarks in Singapore and features luxury hotels, a casino, and a shopping mall.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Grand Palace -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="https://www.tripsavvy.com/thmb/8ZvQjzLoXGk6jt1Fr3oKNYjKvkg=/6016x4016/filters:no_upscale():max_bytes(150000):strip_icc()/bangkok-grand-palace-5aadb03e8e1b6e0037023644.jpg" class="card-img-top" alt="The Grand Palace">
+                <div class="card-body">
+                    <p class="text-muted">Thailand • Bangkok</p>
+                    <h5 class="card-title">The Grand Palace</h5>
+                    <p class="card-text">The Grand Palace is a historic complex that once served as the official residence of the Kings of Siam.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#grandPalaceModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for The Grand Palace -->
+        <div class="modal fade" id="grandPalaceModal" tabindex="-1" role="dialog" aria-labelledby="grandPalaceModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="grandPalaceModalLabel">The Grand Palace</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        The Grand Palace in Bangkok is a stunning symbol of Thai culture and features ornate architecture and exquisite decorations.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Abhayagiri in Anuradhapura -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="https://www.trawell.in/admin/images/upload/07208955Anuradhapura_Abhayagiri.jpg" class="card-img-top" alt="Abhayagiri in Anuradhapura">
+                <div class="card-body">
+                    <p class="text-muted">Sri Lanka • Anuradhapura</p>
+                    <h5 class="card-title">Abhayagiri in Anuradhapura</h5>
+                    <p class="card-text">Abhayagiri is an ancient Buddhist monastery that was once a major center of learning in Sri Lanka.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#abhayagiriModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Abhayagiri in Anuradhapura -->
+        <div class="modal fade" id="abhayagiriModal" tabindex="-1" role="dialog" aria-labelledby="abhayagiriModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="abhayagiriModalLabel">Abhayagiri in Anuradhapura</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Abhayagiri is one of the most significant historical sites in Sri Lanka, known for its unique architecture and religious significance.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taipei 101 -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="https://www.tripsavvy.com/thmb/BtC5_hveM5Vm9onHCVydIHtYGPA=/3008x2000/filters:fill(auto,1)/taipei101-tower-taiwan-56ccb69b5f9b5879cc5b6f0a.jpg" class="card-img-top" alt="Taipei 101">
+                <div class="card-body">
+                    <p class="text-muted">Taiwan • Taipei</p>
+                    <h5 class="card-title">Taipei 101</h5>
+                    <p class="card-text">Taipei 101 is a skyscraper that was once the tallest building in the world and is now a major symbol of Taiwan's modernity.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#taipei101Modal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Taipei 101 -->
+        <div class="modal fade" id="taipei101Modal" tabindex="-1" role="dialog" aria-labelledby="taipei101ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="taipei101ModalLabel">Taipei 101</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Taipei 101 stands at 508 meters and features a unique design inspired by traditional Chinese architecture.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Fuji -->
+        <div class="col-md-4">
+            <div class="card monument-card">
+                <img src="http://www.travelplanet.in/wp-content/uploads/2016/03/291425-mount-fuji.jpg" class="card-img-top" alt="Mount Fuji">
+                <div class="card-body">
+                    <p class="text-muted">Japan • Honshu</p>
+                    <h5 class="card-title">Mount Fuji</h5>
+                    <p class="card-text">Mount Fuji is an active stratovolcano and the highest mountain in Japan, known for its symmetrical shape and cultural significance.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#mountFujiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Fuji -->
+        <div class="modal fade" id="mountFujiModal" tabindex="-1" role="dialog" aria-labelledby="mountFujiModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="mountFujiModalLabel">Mount Fuji</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Fuji is Japan's tallest peak at 3,776 meters and is one of the country's most iconic symbols, frequently featured in art and culture.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+
+</script>
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Section with Video */
+.hero-section {
+    height: 60vh; /* Adjust height as needed */
+    position: relative;
+    background-image: url('i.jpg'); /* Set the image as background */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    color: #fff; /* Text color */
+    text-align: center; /* Center the text */
+    padding-top: 100px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+        /* Remove body padding to avoid overlap with fixed navbar */
+        body {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+            margin-bottom: 0;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6); 
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+        /* Hero Section with Video */
+        .hero-section {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            padding-top: 100px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            color: #333;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            font-family: 'Dancing Script', cursive;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Additional Sections */
+        .mission-section,
+        .future-plans-section {
+            padding: 50px 0;
+        }
+
+        .mission-section h2,
+        .future-plans-section h2 {
+            font-size: 2rem;
+            font-family: 'Dancing Script', cursive;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .mission-section p,
+        .future-plans-section p {
+            font-size: 1.1rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            background-color: #f4f4f4;
+            padding: 50px 0;
+        }
+
+        .testimonial-section h2 {
+            font-size: 2rem;
+            font-family: 'Dancing Script', cursive;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-section .testimonial {
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+                /* Enable dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Align dropdown menu properly */
+}
+
+/* Style adjustments for smoother interaction */
+.nav-item.dropdown:hover > .nav-link {
+    color: #ff5722; /* Highlight active menu item */
+}
+
+/* Match dropdown menu background to navbar */
+.navbar-custom .dropdown-menu {
+    background-color: #333; /* Same color as the navbar */
+    border: none; /* Remove border */
+}
+
+/* Change dropdown item text color */
+.navbar-custom .dropdown-item {
+    color: #fff; /* White text color */
+}
+
+/* Change dropdown item hover background and text color */
+.navbar-custom .dropdown-item:hover {
+    background-color: #f08a24; /* Highlight background color */
+    color: #fff; /* Keep text white */
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+
+            <!-- Dropdown for Categories -->
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="categoriesDropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section text-center">
+</section>
+
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm Jheneel Klein Montero, also known as "The Asia Travel Guy." My passion for travel began at a young age, and over the years, I’ve explored some of the most beautiful, diverse, and culturally rich destinations across Asia. From the bustling streets of Tokyo to the serene temples of Cambodia, I’ve experienced it all—and I’m here to share those experiences with you.</p>
+            <p>This blog is my way of inspiring others to travel and discover the incredible beauty that Asia has to offer. Whether you're an adventure-seeker, a culture enthusiast, or someone who loves to simply explore new places, I aim to provide useful tips, personal stories, and insights that will help you plan your own travels.</p>
+            <p>My goal is to give you an inside look at Asia's most amazing destinations, share travel guides, and offer advice on how to make the most of your travels. I believe that travel is not just about visiting new places—it’s about creating memories, learning about different cultures, and growing as a person. So, join me as we explore the wonders of Asia, one adventure at a time!</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <h2>My Mission</h2>
+            <p>My mission is to inspire you to travel the world, explore new destinations, and connect with the diverse cultures that make our planet so vibrant. I want to help you create meaningful memories that last a lifetime and encourage you to step outside your comfort zone to experience the world in ways you’ve never imagined.</p>
+            <p>Through this blog, I aim to provide honest, practical, and helpful travel advice, recommendations, and tips so that you can plan your trips with confidence. From budget tips to luxurious getaways, you’ll find everything you need to start your journey toward unforgettable experiences.</p>
+        </div>
+    </section>
+
+    <!-- Future Plans Section -->
+    <section class="future-plans-section">
+        <div class="container">
+            <h2>Future Plans</h2>
+            <p>As a traveler, my journey is far from over. I have big plans for the future, including exploring more hidden gems in Asia and sharing more detailed, in-depth travel guides for each destination I visit. My upcoming travel plans include a deep dive into Southeast Asia’s cultural hotspots, hiking through the Himalayas, and discovering lesser-known islands across the Pacific.</p>
+            <p>I also plan to expand this blog by including more diverse content, such as video vlogs, interactive maps, and partnerships with local businesses to provide exclusive travel deals and experiences. Stay tuned for more exciting content that will help you make the most of your travels!</p>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2>What Travelers Are Saying</h2>
+            <div class="testimonial">
+                <p>"This blog has been a lifesaver for planning my trip to Japan! The tips and recommendations were spot on, and I had the most amazing time exploring the country. Highly recommend it!" – Sarah L.</p>
+            </div>
+            <div class="testimonial">
+                <p>"I’ve been following The Asia Travel Guy for years, and I’m always excited to see new posts. The travel stories and guides make me want to pack my bags and hit the road every time!" – Michael D.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

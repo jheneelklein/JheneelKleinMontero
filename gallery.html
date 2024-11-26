@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 100px 0 50px 0;
+            background-color: #f8f9fa;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #555;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Gallery Styles */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .info {
+            opacity: 1;
+        }
+
+        /* Fullscreen View */
+        .fullscreen-view {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .fullscreen-view img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .fullscreen-view.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .fullscreen-view .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+                        /* Enable dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Align dropdown menu properly */
+}
+
+/* Style adjustments for smoother interaction */
+.nav-item.dropdown:hover > .nav-link {
+    color: #ff5722; /* Highlight active menu item */
+}
+
+/* Match dropdown menu background to navbar */
+.navbar-custom .dropdown-menu {
+    background-color: #333; /* Same color as the navbar */
+    border: none; /* Remove border */
+}
+
+/* Change dropdown item text color */
+.navbar-custom .dropdown-item {
+    color: #fff; /* White text color */
+}
+
+/* Change dropdown item hover background and text color */
+.navbar-custom .dropdown-item:hover {
+    background-color: #f08a24; /* Highlight background color */
+    color: #fff; /* Keep text white */
+}
+
+.gallery-item .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    opacity: 0; /* Default: hidden */
+    pointer-events: none; /* Prevent interference with other interactions */
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .info,
+.gallery-item .info.show {
+    opacity: 1; /* Visible on hover or toggle */
+    pointer-events: auto;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+
+            <!-- Dropdown for Categories -->
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="categoriesDropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Header -->
+<header>
+    <h1>Photo Gallery</h1>
+    <p>Explore beautiful moments captured during my travels.</p>
+</header>
+
+
+<!-- Gallery -->
+<div class="gallery-container">
+    <!-- Original 8 Destinations -->
+    <div class="gallery-item" data-image="https://www.tripsavvy.com/thmb/UC__1dv9YAGw3uaDiAj7gK5MKu8=/5000x3253/filters:fill(auto,1)/great-wall-of-china-5bf5a5e1c9e77c00586cd430.jpg">
+        <img src="https://www.tripsavvy.com/thmb/UC__1dv9YAGw3uaDiAj7gK5MKu8=/5000x3253/filters:fill(auto,1)/great-wall-of-china-5bf5a5e1c9e77c00586cd430.jpg" alt="Great Wall of China">
+        <div class="info">
+            <h5>Great Wall of China</h5>
+            <p>Walk through history along the ancient Great Wall.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://lp-cms-production.imgix.net/image_browser/The%20best%20free%20things%20to%20do%20in%20Tokyo.jpg?auto=format&fit=crop&q=40&sharp=10&vib=20&ixlib=react-8.6.4">
+        <img src="https://lp-cms-production.imgix.net/image_browser/The%20best%20free%20things%20to%20do%20in%20Tokyo.jpg?auto=format&fit=crop&q=40&sharp=10&vib=20&ixlib=react-8.6.4" alt="Tokyo">
+        <div class="info">
+            <h5>Tokyo, Japan</h5>
+            <p>Experience the bustling metropolis and iconic landmarks.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://www.paradisevietnam.com/public/backend/uploads/where-to-stay-in-halong-bay/places-to-visit-in-halong-bay_(7).jpg">
+        <img src="https://www.paradisevietnam.com/public/backend/uploads/where-to-stay-in-halong-bay/places-to-visit-in-halong-bay_(7).jpg" alt="Halong Bay">
+        <div class="info">
+            <h5>Halong Bay, Vietnam</h5>
+            <p>Marvel at stunning limestone islands and emerald waters.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://upload.wikimedia.org/wikipedia/commons/f/f5/Taj_Mahal_2012.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Taj_Mahal_2012.jpg" alt="Taj Mahal">
+        <div class="info">
+            <h5>Taj Mahal, India</h5>
+            <p>A timeless symbol of love and architectural brilliance.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://api.time.com/wp-content/uploads/2022/07/Worlds-Greatest-Places-2022-BoracayPhilippines.jpeg">
+        <img src="https://api.time.com/wp-content/uploads/2022/07/Worlds-Greatest-Places-2022-BoracayPhilippines.jpeg" alt="Boracay">
+        <div class="info">
+            <h5>Boracay, Philippines</h5>
+            <p>Relax on powdery white sands and swim in clear blue waters.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://www.tripsavvy.com/thmb/zR66ZxijvjFqje_KesdoLpHbI8g=/3865x2576/filters:fill(auto,1)/pura-ulun-danu-bratan-water-temple--bali-546108613-5a088d01494ec90037e485fc.jpg">
+        <img src="https://www.tripsavvy.com/thmb/zR66ZxijvjFqje_KesdoLpHbI8g=/3865x2576/filters:fill(auto,1)/pura-ulun-danu-bratan-water-temple--bali-546108613-5a088d01494ec90037e485fc.jpg" alt="Bali">
+        <div class="info">
+            <h5>Bali, Indonesia</h5>
+            <p>Explore enchanting temples and verdant rice terraces.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://a.cdn-hotels.com/gdcs/production121/d772/6b5a9a4c-fd06-4bcf-b2f0-d979e3704cf9.jpg">
+        <img src="https://a.cdn-hotels.com/gdcs/production121/d772/6b5a9a4c-fd06-4bcf-b2f0-d979e3704cf9.jpg" alt="Dubai">
+        <div class="info">
+            <h5>Dubai, UAE</h5>
+            <p>Witness futuristic skyscrapers and luxurious lifestyles.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://www.hdwallpapers.in/download/mount_fuji_japan_highest_mountain-wide.jpg">
+        <img src="https://www.hdwallpapers.in/download/mount_fuji_japan_highest_mountain-wide.jpg" alt="Mount Fuji">
+        <div class="info">
+            <h5>Mount Fuji, Japan</h5>
+            <p>Admire Japan's sacred mountain and scenic views.</p>
+        </div>
+    </div>
+
+    <!-- 7 Additional Destinations -->
+    <div class="gallery-item" data-image="https://www.tripsavvy.com/thmb/74SaLzydFMxwf_uDPZn6TFuRERM=/4856x3237/filters:no_upscale():max_bytes(150000):strip_icc()/sunset-at-angkor-wat--siem-reap--cambodia-640432454-5c327edf46e0fb00016ccb6c.jpg">
+        <img src="https://www.tripsavvy.com/thmb/74SaLzydFMxwf_uDPZn6TFuRERM=/4856x3237/filters:no_upscale():max_bytes(150000):strip_icc()/sunset-at-angkor-wat--siem-reap--cambodia-640432454-5c327edf46e0fb00016ccb6c.jpg" alt="Angkor Wat">
+        <div class="info">
+            <h5>Angkor Wat, Cambodia</h5>
+            <p>Discover the grandeur of this ancient Khmer temple complex.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="http://www.shoreexcursionsgroup.com/img/tour/ASJJBESTJEJU2-2.jpg">
+        <img src="http://www.shoreexcursionsgroup.com/img/tour/ASJJBESTJEJU2-2.jpg" alt="Jeju Island">
+        <div class="info">
+            <h5>Jeju Island, South Korea</h5>
+            <p>Relax on volcanic beaches and hike scenic trails.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://www.tripsavvy.com/thmb/qbxEr9lZlm522fsquECxcNAVji0=/3872x2592/filters:no_upscale():max_bytes(150000):strip_icc()/DSC_0153-b28f7077caf647b4986cd0aaa15f179c.jpg">
+        <img src="https://www.tripsavvy.com/thmb/qbxEr9lZlm522fsquECxcNAVji0=/3872x2592/filters:no_upscale():max_bytes(150000):strip_icc()/DSC_0153-b28f7077caf647b4986cd0aaa15f179c.jpg" alt="Petra">
+        <div class="info">
+            <h5>Petra, Jordan</h5>
+            <p>Explore the Rose City carved into the red desert cliffs.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://pix1.agoda.net/hotelimages/6602000/0/62ac72cf52506c3d6707d67278ae49d8.jpg">
+        <img src="https://pix1.agoda.net/hotelimages/6602000/0/62ac72cf52506c3d6707d67278ae49d8.jpg" alt="Maldives">
+        <div class="info">
+            <h5>Maldives</h5>
+            <p>Unwind in turquoise waters and serene overwater villas.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://cdn.thecrazytourist.com/wp-content/uploads/2018/07/ccimage-shutterstock_268569599.jpg">
+        <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/07/ccimage-shutterstock_268569599.jpg" alt="Chiang Mai">
+        <div class="info">
+            <h5>Chiang Mai, Thailand</h5>
+            <p>Experience vibrant night markets and ancient temples.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://wanderlass.com/wp-content/uploads/2020/01/AdobeStock_274617425-scaled.jpeg">
+        <img src="https://wanderlass.com/wp-content/uploads/2020/01/AdobeStock_274617425-scaled.jpeg" alt="Siargao">
+        <div class="info">
+            <h5>Siargao, Philippines</h5>
+            <p>Ride the waves at Asia's surfing capital.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://www.lostwithpurpose.com/wp-content/uploads/2018/05/DSC02425.jpg">
+        <img src="https://www.lostwithpurpose.com/wp-content/uploads/2018/05/DSC02425.jpg" alt="Bhutan">
+        <div class="info">
+            <h5>Bhutan</h5>
+            <p>Visit the happiest nation and its breathtaking monasteries.</p>
+        </div>
+    </div>
+
+    <!-- 10 More Destinations in Asia -->
+    <div class="gallery-item" data-image="https://media.cntraveler.com/photos/5818a486b6f3d25e7b5c6a3e/master/pass/GettyImages-573103543.jpg">
+        <img src="https://media.cntraveler.com/photos/5818a486b6f3d25e7b5c6a3e/master/pass/GettyImages-573103543.jpg" alt="Machu Picchu">
+        <div class="info">
+            <h5>Machu Picchu, Peru</h5>
+            <p>Discover the ancient Incan city atop the Andes mountains.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://laos.de/wp-content/uploads/sites/66/2020/03/Luang-Prabang-shutterstock_461958502-scaled.jpg">
+        <img src="https://laos.de/wp-content/uploads/sites/66/2020/03/Luang-Prabang-shutterstock_461958502-scaled.jpg" alt="Luang Prabang">
+        <div class="info">
+            <h5>Luang Prabang, Laos</h5>
+            <p>Uncover the peaceful beauty and Buddhist temples.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://cdn2.wanderlust.co.uk/media/5740/magazine-autumn-color-at-kiyomizu-dera-temple-in-kyoto.jpg?width=460&slimmage=true">
+        <img src="https://cdn2.wanderlust.co.uk/media/5740/magazine-autumn-color-at-kiyomizu-dera-temple-in-kyoto.jpg?width=460&slimmage=true" alt="Kyoto">
+        <div class="info">
+            <h5>Kyoto, Japan</h5>
+            <p>Experience the beauty of traditional temples and gardens.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://twomonkeystravelgroup.com/wp-content/uploads/2015/10/7-Things-To-Do-In-Kuala-Lumpur-Malaysia9-scaled.jpg">
+        <img src="https://twomonkeystravelgroup.com/wp-content/uploads/2015/10/7-Things-To-Do-In-Kuala-Lumpur-Malaysia9-scaled.jpg" alt="Kuala Lumpur">
+        <div class="info">
+            <h5>Kuala Lumpur, Malaysia</h5>
+            <p>Visit the iconic Petronas Towers and vibrant cityscape.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://franks-travelbox.com/wp-content/uploads/2017/10/myanmar-blick-auf-einen-teil-der-an-die-2-000-pracc88chtige-stupas-tempel-und-pagoden-in-der-historischen-kocc88nigsstadt-bagan-myanmar-bule-sky-studio-shutterstock.jpg">
+        <img src="https://franks-travelbox.com/wp-content/uploads/2017/10/myanmar-blick-auf-einen-teil-der-an-die-2-000-pracc88chtige-stupas-tempel-und-pagoden-in-der-historischen-kocc88nigsstadt-bagan-myanmar-bule-sky-studio-shutterstock.jpg" alt="Bagan">
+        <div class="info">
+            <h5>Bagan, Myanmar</h5>
+            <p>Explore the vast plain filled with ancient pagodas and temples.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://www.tripsavvy.com/thmb/4AAWBQ3ghpXji2fAY5UWBQU-L70=/3992x2992/filters:fill(auto,1)/aerial-view-of-sigiriya-rock-at-misty-morning--sri-lanka--drone-photo--1129567907-a6628ce7d636462f9a0e0361a3808178.jpg">
+        <img src="https://www.tripsavvy.com/thmb/4AAWBQ3ghpXji2fAY5UWBQU-L70=/3992x2992/filters:fill(auto,1)/aerial-view-of-sigiriya-rock-at-misty-morning--sri-lanka--drone-photo--1129567907-a6628ce7d636462f9a0e0361a3808178.jpg" alt="Sri Lanka">
+        <div class="info">
+            <h5>Sri Lanka</h5>
+            <p>Discover tropical beaches, ancient ruins, and wildlife.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://pixelz.cc/wp-content/uploads/2018/07/ama-dablam-mountain-himalaya-range-nepal-uhd-4k-wallpaper.jpg">
+        <img src="https://pixelz.cc/wp-content/uploads/2018/07/ama-dablam-mountain-himalaya-range-nepal-uhd-4k-wallpaper.jpg" alt="Himalayas">
+        <div class="info">
+            <h5>The Himalayas, Nepal</h5>
+            <p>Embark on a trek in the world’s highest mountain range.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://news.cgtn.com/news/3d3d514e35637a4e34457a6333566d54/img/b58bb27931be464ab8b79b71758e0558/b58bb27931be464ab8b79b71758e0558.jpg">
+        <img src="https://news.cgtn.com/news/3d3d514e35637a4e34457a6333566d54/img/b58bb27931be464ab8b79b71758e0558/b58bb27931be464ab8b79b71758e0558.jpg" alt="Guilin">
+        <div class="info">
+            <h5>Guilin, China</h5>
+            <p>Admire the stunning karst mountains and picturesque rivers.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="https://cdn.theculturetrip.com/wp-content/uploads/2019/05/feature_e7nw76.jpg">
+        <img src="https://cdn.theculturetrip.com/wp-content/uploads/2019/05/feature_e7nw76.jpg" alt="Tashkent">
+        <div class="info">
+            <h5>Tashkent, Uzbekistan</h5>
+            <p>Explore the historical city rich with culture and architecture.</p>
+        </div>
+    </div>
+    <div class="gallery-item" data-image="http://4.bp.blogspot.com/_dl6Szm-ZAuk/S8tBHXA5HEI/AAAAAAAAE-U/RZtQA21iv9c/s1600/Kathmandu.jpg">
+        <img src="http://4.bp.blogspot.com/_dl6Szm-ZAuk/S8tBHXA5HEI/AAAAAAAAE-U/RZtQA21iv9c/s1600/Kathmandu.jpg" alt="Kathmandu">
+        <div class="info">
+            <h5>Kathmandu, Nepal</h5>
+            <p>Discover the cultural heritage and vibrant atmosphere.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Fullscreen View -->
+<div class="fullscreen-view" id="fullscreenView">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <img id="fullscreenImage" src="" alt="Full View">
+</div>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const fullscreenView = document.getElementById('fullscreenView');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        const closeBtn = document.getElementById('closeBtn');
+    
+        // Add click event to gallery items
+        galleryItems.forEach(item => {
+            const info = item.querySelector('.info');
+    
+            // Show fullscreen view on image click
+            item.addEventListener('click', () => {
+                const imageSrc = item.getAttribute('data-image');
+                fullscreenImage.src = imageSrc;
+                fullscreenView.classList.add('visible');
+            });
+    
+            // Toggle information display on mobile devices
+            item.addEventListener('touchstart', () => {
+                if (info.style.opacity === "1") {
+                    info.style.opacity = "0"; // Hide info if already visible
+                } else {
+                    info.style.opacity = "1"; // Show info on touch
+                }
+            });
+        });
+    
+        // Close fullscreen view
+        closeBtn.addEventListener('click', () => {
+            fullscreenView.classList.remove('visible');
+        });
+    
+        fullscreenView.addEventListener('click', (e) => {
+            if (e.target === fullscreenView || e.target === closeBtn) {
+                fullscreenView.classList.remove('visible');
+            }
+        });
+    </script>
+    
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

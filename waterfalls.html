@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterfalls</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+        /* Waterfall Cards */
+        .waterfall-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .waterfall-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Read More Button */
+        .card .btn {
+            background-color: #f08a24;
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn:hover {
+            background-color: #ff5722;
+        }
+
+        .text-orange {
+            color: #f08a24;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Enable dropdown on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        /* Style adjustments for smoother interaction */
+        .nav-item.dropdown:hover > .nav-link {
+            color: #ff5722;
+        }
+
+        /* Match dropdown menu background to navbar */
+        .navbar-custom .dropdown-menu {
+            background-color: #333;
+            border: none;
+        }
+
+        /* Change dropdown item text color */
+        .navbar-custom .dropdown-item {
+            color: #fff;
+        }
+
+        /* Change dropdown item hover background and text color */
+        .navbar-custom .dropdown-item:hover {
+            background-color: #f08a24;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<!-- Waterfall List -->
+<div class="container my-5" style="padding-top: 20px;">
+    <h2 class="text-center text-orange my-4">Waterfalls in Asia</h2>
+    <div class="row">
+        <!-- Ban Gioc Waterfall -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="https://vietnamisawesome.com/wp-content/uploads/2023/02/2946_ban-gioc-waterfall-4160385_1920.jpg" class="card-img-top" alt="Ban Gioc Waterfall">
+                <div class="card-body">
+                    <p class="text-muted">Vietnam • Cao Bang</p>
+                    <h5 class="card-title">Ban Gioc Waterfall, Vietnam</h5>
+                    <p class="card-text">Located on the border between Vietnam and China, this stunning waterfall is one of the largest in Asia.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#banGiocModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Ban Gioc -->
+        <div class="modal fade" id="banGiocModal" tabindex="-1" role="dialog" aria-labelledby="banGiocModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="banGiocModalLabel">Ban Gioc Waterfall, Vietnam</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Ban Gioc Waterfall is one of the most beautiful and unspoiled waterfalls in Asia, located in a lush, mountainous region of Vietnam.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kuang Si Waterfall -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="https://i0.wp.com/travelfreak.net/wp-content/uploads/2014/10/kuang-si-falls.jpg?ssl=1" class="card-img-top" alt="Kuang Si Waterfall">
+                <div class="card-body">
+                    <p class="text-muted">Laos • Luang Prabang</p>
+                    <h5 class="card-title">Kuang Si Waterfall, Laos</h5>
+                    <p class="card-text">Known for its stunning blue water, this multi-tiered waterfall is a popular destination in Laos.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#kuangSiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Kuang Si -->
+        <div class="modal fade" id="kuangSiModal" tabindex="-1" role="dialog" aria-labelledby="kuangSiModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="kuangSiModalLabel">Kuang Si Waterfall, Laos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Kuang Si is known for its picturesque turquoise pools and scenic surrounding nature, making it a must-visit in Luang Prabang.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jog Falls -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="https://peopleplaces.in/wp-content/uploads/2023/03/Jog-Falls-Viewpoints.jpg" class="card-img-top" alt="Jog Falls">
+                <div class="card-body">
+                    <p class="text-muted">India • Karnataka</p>
+                    <h5 class="card-title">Jog Falls, India</h5>
+                    <p class="card-text">One of the highest waterfalls in India, Jog Falls is an impressive sight during the monsoon season.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#jogFallsModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Jog Falls -->
+        <div class="modal fade" id="jogFallsModal" tabindex="-1" role="dialog" aria-labelledby="jogFallsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="jogFallsModalLabel">Jog Falls, India</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Jog Falls is a majestic waterfall, best visited during the rainy season when the water cascades down with incredible force.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Waterfalls -->
+
+        <!-- 1. Tumpak Sewa Waterfall -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="https://thisworldtraveled.com/wp-content/uploads/2019/10/the-base-of-tumpak-sewu.jpg" class="card-img-top" alt="Tumpak Sewa Waterfall">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia • East Java</p>
+                    <h5 class="card-title">Tumpak Sewa Waterfall, Indonesia</h5>
+                    <p class="card-text">Known for its powerful twin falls, Tumpak Sewa is one of the most stunning waterfalls in Indonesia.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#tumpakSewaModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Tumpak Sewa -->
+        <div class="modal fade" id="tumpakSewaModal" tabindex="-1" role="dialog" aria-labelledby="tumpakSewaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tumpakSewaModalLabel">Tumpak Sewa Waterfall, Indonesia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Tumpak Sewa Waterfall features two magnificent waterfalls cascading together, creating an awe-inspiring view in East Java.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Erawan Waterfall -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="http://upload.wikimedia.org/wikipedia/commons/b/b4/Erawan_Waterfall%2C_Kanchanaburi_Province%2C_Thailand_-_June_2004.jpg" class="card-img-top" alt="Erawan Waterfall">
+                <div class="card-body">
+                    <p class="text-muted">Thailand • Kanchanaburi</p>
+                    <h5 class="card-title">Erawan Waterfall, Thailand</h5>
+                    <p class="card-text">Erawan is a stunning seven-tiered waterfall, famous for its emerald green pools located in the Erawan National Park.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#erawanModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Erawan -->
+        <div class="modal fade" id="erawanModal" tabindex="-1" role="dialog" aria-labelledby="erawanModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="erawanModalLabel">Erawan Waterfall, Thailand</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Erawan Waterfall, known for its seven tiers and emerald pools, is a popular spot for tourists and nature lovers in Thailand.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Nohkalikai Waterfall -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="https://charismaticplanet.com/wp-content/uploads/2015/06/93-1024x681.jpg" class="card-img-top" alt="Nohkalikai Waterfall">
+                <div class="card-body">
+                    <p class="text-muted">India • Meghalaya</p>
+                    <h5 class="card-title">Nohkalikai Waterfall, India</h5>
+                    <p class="card-text">Located in the northeastern state of Meghalaya, Nohkalikai is one of the tallest waterfalls in India.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#nohkalikaiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Nohkalikai -->
+        <div class="modal fade" id="nohkalikaiModal" tabindex="-1" role="dialog" aria-labelledby="nohkalikaiModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="nohkalikaiModalLabel">Nohkalikai Waterfall, India</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Nohkalikai Waterfall is known for its stunning height and the scenic surroundings of the lush Khasi Hills in Meghalaya.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Tad Fane Waterfall -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="https://image.freepik.com/free-photo/tad-fane-waterfalls-laos_35736-19.jpg" class="card-img-top" alt="Tad Fane Waterfall">
+                <div class="card-body">
+                    <p class="text-muted">Laos • Champasak</p>
+                    <h5 class="card-title">Tad Fane Waterfall, Laos</h5>
+                    <p class="card-text">Tad Fane is a majestic twin waterfall in the heart of the Bolaven Plateau in southern Laos.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#tadFaneModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Tad Fane -->
+        <div class="modal fade" id="tadFaneModal" tabindex="-1" role="dialog" aria-labelledby="tadFaneModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tadFaneModalLabel">Tad Fane Waterfall, Laos</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Tad Fane Waterfall is known for its breathtaking beauty and is one of the most remarkable natural attractions in Laos.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Sekumpul Waterfall -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="https://img.freepik.com/premium-photo/bali-indonesia-aerial-view-sekumpul-waterfall-forest-view-from-drone-natural-landscape-summer-time-from-air-travel-vacation-image_647656-2143.jpg?w=1480" class="card-img-top" alt="Sekumpul Waterfall">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia • Bali</p>
+                    <h5 class="card-title">Sekumpul Waterfall, Indonesia</h5>
+                    <p class="card-text">Sekumpul is a stunning multi-tiered waterfall located in the lush jungles of Bali.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#sekumpulModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Sekumpul -->
+        <div class="modal fade" id="sekumpulModal" tabindex="-1" role="dialog" aria-labelledby="sekumpulModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sekumpulModalLabel">Sekumpul Waterfall, Indonesia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Sekumpul Waterfall is one of Bali's most impressive waterfalls, featuring several falls surrounded by lush tropical vegetation.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Sapa Waterfall -->
+        <div class="col-md-4">
+            <div class="card waterfall-card">
+                <img src="https://localvietnam.com/wp-content/uploads/2021/03/love-waterfall-sapa.jpg" class="card-img-top" alt="Sapa Waterfall">
+                <div class="card-body">
+                    <p class="text-muted">Vietnam • Sapa</p>
+                    <h5 class="card-title">Sapa Waterfall, Vietnam</h5>
+                    <p class="card-text">Nestled in the Sapa region of northern Vietnam, this waterfall offers a beautiful view with its surrounding hills.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#sapaModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Sapa -->
+        <div class="modal fade" id="sapaModal" tabindex="-1" role="dialog" aria-labelledby="sapaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sapaModalLabel">Sapa Waterfall, Vietnam</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Sapa Waterfall is a picturesque natural wonder, offering breathtaking views in the heart of the mountainous Sapa region of Vietnam.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+
+</script>
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

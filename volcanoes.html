@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcanoes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navbar Styling */
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+        .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+        /* Volcano Cards */
+        .volcano-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .volcano-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Read More Button */
+        .card .btn {
+            background-color: #f08a24;
+            border: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .card .btn:hover {
+            background-color: #ff5722;
+        }
+
+        .text-orange {
+            color: #f08a24;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Enable dropdown on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        /* Style adjustments for smoother interaction */
+        .nav-item.dropdown:hover > .nav-link {
+            color: #ff5722;
+        }
+
+        /* Match dropdown menu background to navbar */
+        .navbar-custom .dropdown-menu {
+            background-color: #333;
+            border: none;
+        }
+
+        /* Change dropdown item text color */
+        .navbar-custom .dropdown-item {
+            color: #fff;
+        }
+
+        /* Change dropdown item hover background and text color */
+        .navbar-custom .dropdown-item:hover {
+            background-color: #f08a24;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Volcano List -->
+<div class="container my-5" style="padding-top: 20px;">
+    <h2 class="text-center text-orange my-4">Famous Volcanoes in Asia</h2>
+    <div class="row">
+        <!-- Mount Fuji -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://cdn.britannica.com/03/75503-050-F65891FA/volcanic-cone-Japan-Mount-Fuji.jpg" class="card-img-top" alt="Mount Fuji">
+                <div class="card-body">
+                    <p class="text-muted">Japan</p>
+                    <h5 class="card-title">Mount Fuji: Japan's Iconic Volcano</h5>
+                    <p class="card-text">Mount Fuji is a dormant volcano and one of Japan's most iconic landmarks, offering breathtaking views.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#fujiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Fuji -->
+        <div class="modal fade" id="fujiModal" tabindex="-1" role="dialog" aria-labelledby="fujiModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="fujiModalLabel">Mount Fuji</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Fuji is an active stratovolcano and the highest peak in Japan, popular for climbing and its picturesque beauty.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Bromo -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://mostbeautifulpicture.com/wp-content/uploads/2018/07/Bromo-volcano-Java-Indonesia-Kyaw-Win-Hlaing-1024x683.jpg" class="card-img-top" alt="Mount Bromo">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia</p>
+                    <h5 class="card-title">Mount Bromo: Indonesia's Majestic Volcano</h5>
+                    <p class="card-text">Mount Bromo is an active volcano located in East Java, Indonesia, known for its stunning sunrise views.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#bromoModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Bromo -->
+        <div class="modal fade" id="bromoModal" tabindex="-1" role="dialog" aria-labelledby="bromoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bromoModalLabel">Mount Bromo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Bromo is an active volcano in Indonesia famous for its stunning views and the Bromo Tengger Semeru National Park.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Merapi -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://img.rasset.ie/0016424f-1600.jpg" class="card-img-top" alt="Mount Merapi">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia</p>
+                    <h5 class="card-title">Mount Merapi: The Active Volcano</h5>
+                    <p class="card-text">Mount Merapi is one of the most active volcanoes in Indonesia, with frequent eruptions and stunning landscapes.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#merapiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Merapi -->
+        <div class="modal fade" id="merapiModal" tabindex="-1" role="dialog" aria-labelledby="merapiModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="merapiModalLabel">Mount Merapi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Merapi is known for its explosive eruptions and as one of the most active volcanoes in Indonesia.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Pinatubo -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://1.bp.blogspot.com/-BuwFMxGUS6c/Vz8u8SkRH0I/AAAAAAAABbA/hODSTxg-C7AU4pGf6aDzFYvSaBWGnbM-ACLcB/w1200-h630-p-k-no-nu/1382341875.png" class="card-img-top" alt="Mount Pinatubo">
+                <div class="card-body">
+                    <p class="text-muted">Philippines</p>
+                    <h5 class="card-title">Mount Pinatubo</h5>
+                    <p class="card-text">Mount Pinatubo erupted in 1991, one of the largest eruptions of the 20th century, creating a stunning crater lake.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pinatuboModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Pinatubo -->
+        <div class="modal fade" id="pinatuboModal" tabindex="-1" role="dialog" aria-labelledby="pinatuboModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="pinatuboModalLabel">Mount Pinatubo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Pinatubo's eruption created a beautiful crater lake, offering a popular trekking destination in the Philippines.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Taal -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://wallpapercave.com/wp/wp4189805.jpg" class="card-img-top" alt="Mount Taal">
+                <div class="card-body">
+                    <p class="text-muted">Philippines</p>
+                    <h5 class="card-title">Mount Taal: A Beautiful and Dangerous Volcano</h5>
+                    <p class="card-text">Mount Taal is an active volcano located in the Philippines, known for its picturesque crater lake.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#taalModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Taal -->
+        <div class="modal fade" id="taalModal" tabindex="-1" role="dialog" aria-labelledby="taalModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="taalModalLabel">Mount Taal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Taal is a stunning active volcano located in a lake, known for its recent eruptions and beauty.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Rinjani -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://www.tripsavvy.com/thmb/MLdouxVoHcoBc5tVediT-MUEigs=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-498839091-5887fd623df78c2ccdd246d3.jpg" class="card-img-top" alt="Mount Rinjani">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia</p>
+                    <h5 class="card-title">Mount Rinjani: Indonesia's Majestic Volcano</h5>
+                    <p class="card-text">Mount Rinjani is an active stratovolcano in Lombok, Indonesia, known for its stunning crater lake and trekking opportunities.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#rinjaniModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Rinjani -->
+        <div class="modal fade" id="rinjaniModal" tabindex="-1" role="dialog" aria-labelledby="rinjaniModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rinjaniModalLabel">Mount Rinjani</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Rinjani is the second highest volcano in Indonesia, offering breathtaking views and a popular trekking destination.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Krakatoa -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://3.bp.blogspot.com/-eJV6kjAn66k/UwLDzuxXMNI/AAAAAAAAC0U/Nfw1W7u0msM/s1600/krakatau4.jpg" class="card-img-top" alt="Mount Krakatoa">
+                <div class="card-body">
+                    <p class="text-muted">Indonesia</p>
+                    <h5 class="card-title">Mount Krakatoa: The Infamous Eruption</h5>
+                    <p class="card-text">Mount Krakatoa is one of the most infamous volcanoes in the world, known for its catastrophic eruption in 1883.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#krakatoaModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Krakatoa -->
+        <div class="modal fade" id="krakatoaModal" tabindex="-1" role="dialog" aria-labelledby="krakatoaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="krakatoaModalLabel">Mount Krakatoa</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Krakatoa's eruption in 1883 caused widespread devastation and is one of the most famous volcanic eruptions in history.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mount Taranaki -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://i1.wp.com/beautifulplacestovisit.com/wp-content/uploads/2010/09/Mount_Taranaki_New_Zealand21.jpg" class="card-img-top" alt="Mount Taranaki">
+                <div class="card-body">
+                    <p class="text-muted">New Zealand</p>
+                    <h5 class="card-title">Mount Taranaki: New Zealand's Perfect Volcano</h5>
+                    <p class="card-text">Mount Taranaki, also known as Mount Egmont, is a dormant stratovolcano known for its symmetry and beauty in New Zealand.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#taranakiModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Taranaki -->
+        <div class="modal fade" id="taranakiModal" tabindex="-1" role="dialog" aria-labelledby="taranakiModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="taranakiModalLabel">Mount Taranaki</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Taranaki, located in New Zealand, is known for its perfect conical shape and as a popular destination for hikers and climbers.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Vesuvius -->
+        <div class="col-md-4">
+            <div class="card volcano-card">
+                <img src="https://facts.net/wp-content/uploads/2023/06/Mount-Vesuvius-explosion.jpeg" class="card-img-top" alt="Mount Vesuvius">
+                <div class="card-body">
+                    <p class="text-muted">Italy</p>
+                    <h5 class="card-title">Mount Vesuvius: The Deadly Volcano</h5>
+                    <p class="card-text">Mount Vesuvius is one of the most famous and dangerous volcanoes in the world, responsible for the destruction of Pompeii.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#vesuviusModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Mount Vesuvius -->
+        <div class="modal fade" id="vesuviusModal" tabindex="-1" role="dialog" aria-labelledby="vesuviusModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="vesuviusModalLabel">Mount Vesuvius</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Mount Vesuvius erupted in AD 79, destroying Pompeii and Herculaneum, and remains one of the most famous and active volcanoes in Europe.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+
+</script>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+.hero-section {
+    height: 100vh;
+    position: relative;
+    background-image: url('https://wallpaperaccess.com/full/136008.jpg'); /* Replace with your image file path */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+    z-index: 1; /* Places the overlay above the background */
+}
+
+.container {
+    position: relative;
+    z-index: 2; /* Ensures content appears above the overlay */
+}
+
+        .navbar-custom {
+            background-color: #333;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #f08a24;
+        }
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+        /* Hero Section with Video */
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Featured Section Styling */
+        .featured-section {
+            text-align: center;
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+
+        .featured-section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background-color: #333;
+            margin: 0 auto 30px auto;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container img {
+            max-height: 50px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo-container {
+                gap: 20px;
+            }
+
+            .logo-container img {
+                max-height: 40px;
+            }
+        }
+        #explore-section .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #explore-section .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        #travel-guides .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #travel-guides .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Move down Featured Asian Destinations Section */
+        #featured-destinations {
+            padding-top: 100px; /* Adjust value as needed */
+        }
+
+        /* Enable dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Align dropdown menu properly */
+}
+
+/* Style adjustments for smoother interaction */
+.nav-item.dropdown:hover > .nav-link {
+    color: #ff5722; /* Highlight active menu item */
+}
+
+/* Match dropdown menu background to navbar */
+.navbar-custom .dropdown-menu {
+    background-color: #333; /* Same color as the navbar */
+    border: none; /* Remove border */
+}
+
+/* Change dropdown item text color */
+.navbar-custom .dropdown-item {
+    color: #fff; /* White text color */
+}
+
+/* Change dropdown item hover background and text color */
+.navbar-custom .dropdown-item:hover {
+    background-color: #f08a24; /* Highlight background color */
+    color: #fff; /* Keep text white */
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">The Asia Travel Guy</a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+    >
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+
+            <!-- Dropdown for Categories -->
+            <li class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="categoriesDropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <a class="dropdown-item" href="beaches.html">Beaches</a>
+                    <a class="dropdown-item" href="hikes.html">Hikes</a>
+                    <a class="dropdown-item" href="monuments.html">Monuments</a>
+                    <a class="dropdown-item" href="volcanoes.html">Volcanoes</a>
+                    <a class="dropdown-item" href="waterfalls.html">Waterfalls</a>
+                    <a class="dropdown-item" href="wildlife.html">Wildlife</a>
+                </div>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<section class="hero-section text-center text-white">
+    <div class="overlay"></div>
+    <div class="container">
+        <h2>BLOG</h2>
+        <h3>Recent travel blog post</h3>
+    </div>
+</section>
+
+
+    <!-- Travel Guides Section -->
+<section id="travel-guides" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Popular Travel Blog Posts & Guides</h2>
+        <p class="text-center mb-5">Focusing on must-see destinations and experiences across Asia</p>
+        
+        <div class="row">
+            <!-- Guide 1 -->
+            <div class="col-md-4 mb-4">
+                <a href="egypt.html" class="card-link">
+                    <div class="card">
+                        <img src="http://3.bp.blogspot.com/-ptfla9NIMCg/UnJM0B438OI/AAAAAAAABqQ/WDcbqrKXnDk/s1600/the-egyptian-pyramids-by--onexproof-on-deviantart-axsseqsf.jpg" class="card-img-top" alt="How to Visit the Pyramids in Egypt">
+                        <div class="card-body">
+                            <h5 class="card-title">How to Visit the Pyramids in Egypt</h5>
+                            <p class="card-text">A complete guide to exploring the ancient Pyramids of Giza and uncovering Egypt's rich history.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 2 -->
+            <div class="col-md-4 mb-4">
+                <a href="nusa.html" class="card-link">
+                    <div class="card">
+                        <img src="https://a.cdn-hotels.com/gdcs/production51/d1983/1a7e2818-045b-4fcc-973c-6d5f63a523ec.jpg" class="card-img-top" alt="Nusa Penida Island Guide for Bali">
+                        <div class="card-body">
+                            <h5 class="card-title">Nusa Penida Island Guide for Bali</h5>
+                            <p class="card-text">Discover the scenic beauty and hidden spots on Bali’s Nusa Penida Island.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 3 -->
+            <div class="col-md-4 mb-4">
+                <a href="japan.html" class="card-link">
+                    <div class="card">
+                        <img src="https://cdn.thecrazytourist.com/wp-content/uploads/2018/05/ccimage-shutterstock_760293580.jpg" class="card-img-top" alt="22 Best Things to Do in Japan">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Things to Do in Japan</h5>
+                            <p class="card-text">A curated list of the top experiences in Japan, from bustling cities to serene temples.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 5 -->
+            <div class="col-md-4 mb-4">
+                <a href="indo.html" class="card-link">
+                    <div class="card">
+                        <img src="https://saltinourhair.com/wp-content/uploads/2018/09/tumpak-sewu-best-waterfall-indonesia-java-foot.jpg" class="card-img-top" alt="18 Best Waterfalls in Indonesia">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Waterfalls in Indonesia</h5>
+                            <p class="card-text">Experience Indonesia’s stunning waterfalls, from jungle cascades to hidden gems.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 6 -->
+            <div class="col-md-4 mb-4">
+                <a href="island.html" class="card-link">
+                    <div class="card">
+                        <img src="https://www.citymatters.london/wp-content/uploads/2019/02/001-KIAT_2016_Raja-Ampat-6.jpg" class="card-img-top" alt="25 Best Islands in Indonesia">
+                        <div class="card-body">
+                            <h5 class="card-title">Best Islands in Indonesia</h5>
+                            <p class="card-text">A guide to Indonesia’s top islands, perfect for beach lovers and island hoppers.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Guide 7 -->
+            <div class="col-md-4 mb-4">
+                <a href="coron.html" class="card-link">
+                    <div class="card">
+                        <img src="https://www.touristsecrets.com/wp-content/uploads/portal_files/touristsecrets_site_posts/2020-11/AdobeStock_269363900.jpeg" class="card-img-top" alt="Coron Palawan Island Guide">
+                        <div class="card-body">
+                            <h5 class="card-title">Coron Palawan Island Guide</h5>
+                            <p class="card-text">An insider’s guide to Coron, Palawan's pristine beaches, and diving spots.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Featured Asian Destinations Section -->
+<section id="featured-destinations" class="container py-5" style="margin-top: 30px;">
+    <h2 class="text-center mb-4">Featured Asian Destinations</h2>
+    <div class="row">
+        <!-- Blog Post 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://theworldtravelguy.com/wp-content/uploads/2022/01/DJI_0384.jpg" class="card-img-top" alt="Mount Karangetang Volcano in Siau, Sulawesi">
+                <div class="card-body">
+                    <h5 class="card-title">Climbing Mount Karangetang Volcano In Siau, Sulawesi</h5>
+                    <p class="card-text">Mount Karangetang is an awesome Jurassic Park-looking volcano that dominates the remote island of Siau in North Sulawesi, Indonesia...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#karangetangModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://lp-cms-production.imgix.net/2021-11/Maya%20Bay%20crowds.jpg?auto=format&q=75" class="card-img-top" alt="Maya Bay, Thailand">
+                <div class="card-body">
+                    <h5 class="card-title">Maya Bay In Thailand: The Beach Is Open!</h5>
+                    <p class="card-text">The beach at Maya Bay is one of the most famous and photogenic places in Thailand...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mayaBayModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://wanderingwheatleys.com/wp-content/uploads/2020/08/khao-sok-national-park-thailand-cheow-lan-lake-header.jpg" class="card-img-top" alt="Khao Sok National Park, Thailand">
+                <div class="card-body">
+                    <h5 class="card-title">How To Visit Khao Sok National Park In Thailand</h5>
+                    <p class="card-text">One of the best places to see nature and animals in Thailand is at the Khao Sok National Park...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#khaoSokModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 4 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://www.fodors.com/wp-content/uploads/2018/10/02.1_Angkor101_Pass_dreamstime_xxl_60637934.jpg" class="card-img-top" alt="Angkor Wat, Cambodia">
+                <div class="card-body">
+                    <h5 class="card-title">Explore the Ancient Temples of Angkor Wat, Cambodia</h5>
+                    <p class="card-text">Angkor Wat is the world’s largest religious monument, located in Siem Reap, Cambodia...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#angkorWatModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 5 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/originals/07/9f/60/079f60da118fb30cabd4f2b702e7a52e.jpg" class="card-img-top" alt="Batanes, Philippines">
+                <div class="card-body">
+                    <h5 class="card-title">Discover the Unique Beauty of Batanes, Philippines</h5>
+                    <p class="card-text">Batanes, the northernmost province of the Philippines, offers breathtaking landscapes and a unique cultural heritage...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#batanesModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 6 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/6/2017/07/Kiyomizudera-Temple-Kyoto.jpg" class="card-img-top" alt="Kyoto, Japan">
+                <div class="card-body">
+                    <h5 class="card-title">Explore the Temples and Gardens of Kyoto, Japan</h5>
+                    <p class="card-text">Kyoto, known for its classical Buddhist temples, as well as gardens, imperial palaces, Shinto shrines, and traditional wooden houses...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kyotoModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Blog Post 7 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/BPafFcONRV4/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFEgWyhlMA8=&rs=AOn4CLBABOltEaVAEotlPyKcvq4NgFFhxA" class="card-img-top" alt="Bali, Indonesia">
+                <div class="card-body">
+                    <h5 class="card-title">Relax on the Beaches of Bali, Indonesia</h5>
+                    <p class="card-text">Bali is renowned for its scenic beaches, coral reefs, and vibrant nightlife...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#baliModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 8 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://cdn1.matadornetwork.com/blogs/1/2018/01/3-Bedroom-Water-Reserve-at-Soneva-Jani-2-by-Jack-Brown.jpg" class="card-img-top" alt="Maldives">
+                <div class="card-body">
+                    <h5 class="card-title">Experience Paradise in the Maldives</h5>
+                    <p class="card-text">The Maldives offer crystal-clear waters, luxurious resorts, and vibrant marine life...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#maldivesModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 9 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://sweetescapeholiday.ph/wp-content/uploads/2020/07/Boracay-Island-2-1.jpg-1.jpg" class="card-img-top" alt="Boracay, Philippines">
+                <div class="card-body">
+                    <h5 class="card-title">Unwind on the White Sands of Boracay, Philippines</h5>
+                    <p class="card-text">Boracay is famous for its powdery white sands and turquoise waters...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#boracayModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 10 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://a.cdn-hotels.com/gdcs/production77/d775/8786e996-e0d3-4d2d-bf9c-8c09f162e4d4.jpg" class="card-img-top" alt="Jeju Island, South Korea">
+                <div class="card-body">
+                    <h5 class="card-title">Discover the Wonders of Jeju Island, South Korea</h5>
+                    <p class="card-text">Jeju Island offers volcanic landscapes, stunning waterfalls, and traditional villages...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#jejuModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 11 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://www.aftravel.com.my/storage/gallery/1563251912.jpg" class="card-img-top" alt="Uluru, Australia">
+                <div class="card-body">
+                    <h5 class="card-title">Visit the Sacred Uluru in Australia</h5>
+                    <p class="card-text">Uluru, a sacred sandstone monolith, offers breathtaking sunrises and sunsets...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uluruModal">Read More</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Post 12 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://www.worldhistory.org/uploads/images/2331.jpg?v=1629893702" class="card-img-top" alt="Machu Picchu, Peru">
+                <div class="card-body">
+                    <h5 class="card-title">Explore the Ancient Ruins of Machu Picchu, Peru</h5>
+                    <p class="card-text">Machu Picchu is a 15th-century Inca citadel set high in the Andes Mountains...</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#machuPicchuModal">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Modals for Destinations -->
+
+    <!-- Modal for Mount Karangetang Volcano -->
+    <div class="modal fade" id="karangetangModal" tabindex="-1" role="dialog" aria-labelledby="karangetangModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="karangetangModalLabel">Climbing Mount Karangetang Volcano In Siau, Sulawesi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Mount Karangetang is a stunning Jurassic Park-like volcano located in North Sulawesi, Indonesia. Dominating the remote island of Siau, this active volcano offers both beautiful views and a challenging adventure for hiking enthusiasts.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Maya Bay -->
+    <div class="modal fade" id="mayaBayModal" tabindex="-1" role="dialog" aria-labelledby="mayaBayModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mayaBayModalLabel">Maya Bay In Thailand: The Beach Is Open!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Maya Bay, located in Thailand, is famous for its turquoise waters and white-sand beach, encircled by steep limestone cliffs. It recently reopened for tourism with conservation efforts in place to protect its natural beauty.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Khao Sok National Park -->
+    <div class="modal fade" id="khaoSokModal" tabindex="-1" role="dialog" aria-labelledby="khaoSokModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="khaoSokModalLabel">How To Visit Khao Sok National Park In Thailand</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Khao Sok National Park, one of Thailand's hidden gems, features dense forests, beautiful lakes, and unique limestone cliffs. It's home to diverse wildlife, offering a fantastic escape for nature lovers and adventurers.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Angkor Wat -->
+    <div class="modal fade" id="angkorWatModal" tabindex="-1" role="dialog" aria-labelledby="angkorWatModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="angkorWatModalLabel">Explore the Ancient Temples of Angkor Wat, Cambodia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Angkor Wat, located in Siem Reap, Cambodia, is a magnificent temple complex and the largest religious monument in the world. The ancient ruins offer an incredible glimpse into the Khmer Empire's history and architecture.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Batanes -->
+    <div class="modal fade" id="batanesModal" tabindex="-1" role="dialog" aria-labelledby="batanesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="batanesModalLabel">Discover the Unique Beauty of Batanes, Philippines</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Batanes is known for its rolling hills, pristine landscapes, and rich cultural heritage. This northernmost province of the Philippines offers visitors a serene escape into a different world.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Kyoto -->
+    <div class="modal fade" id="kyotoModal" tabindex="-1" role="dialog" aria-labelledby="kyotoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="kyotoModalLabel">Explore the Temples and Gardens of Kyoto, Japan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Kyoto, once the capital of Japan, is known for its well-preserved temples, beautiful gardens, and traditional wooden houses. The city has stunning places such as the Fushimi Inari Shrine and the Golden Pavilion, making it a must-visit for travelers seeking Japanese culture.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Bali -->
+<div class="modal fade" id="baliModal" tabindex="-1" role="dialog" aria-labelledby="baliModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="baliModalLabel">Relax on the Beaches of Bali, Indonesia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Bali offers stunning beaches, lush rice terraces, and vibrant cultural experiences. The island's diverse landscapes and spiritual charm make it a perfect retreat.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Maldives -->
+<div class="modal fade" id="maldivesModal" tabindex="-1" role="dialog" aria-labelledby="maldivesModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="maldivesModalLabel">Experience Paradise in the Maldives</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                The Maldives, with its clear blue waters and vibrant coral reefs, is a haven for snorkelers and divers. The luxurious resorts provide a tranquil escape.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Boracay -->
+<div class="modal fade" id="boracayModal" tabindex="-1" role="dialog" aria-labelledby="boracayModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="boracayModalLabel">Unwind on the White Sands of Boracay, Philippines</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Boracay, known for its powdery white sand and crystal-clear waters, is one of the Philippines' most famous beaches. It's a top destination for relaxation and water activities.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Jeju Island -->
+<div class="modal fade" id="jejuModal" tabindex="-1" role="dialog" aria-labelledby="jejuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="jejuModalLabel">Discover the Wonders of Jeju Island, South Korea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Jeju Island is known for its volcanic landscapes, beautiful beaches, and cultural heritage sites. It’s a popular spot for both tourists and locals alike.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Uluru -->
+<div class="modal fade" id="uluruModal" tabindex="-1" role="dialog" aria-labelledby="uluruModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uluruModalLabel">Visit the Sacred Uluru in Australia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Uluru, also known as Ayers Rock, is a massive sandstone monolith in Australia’s Northern Territory. It's sacred to the indigenous Anangu people and is a UNESCO World Heritage site.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Machu Picchu -->
+<div class="modal fade" id="machuPicchuModal" tabindex="-1" role="dialog" aria-labelledby="machuPicchuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="machuPicchuModalLabel">Explore the Ancient Ruins of Machu Picchu, Peru</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Machu Picchu is a historical sanctuary and UNESCO World Heritage site. It's an iconic symbol of the Inca civilization, offering breathtaking views and remarkable history.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    // Enable dropdown on hover for touch devices
+document.querySelectorAll('.nav-item.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('mouseenter', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.add('show');
+    });
+
+    dropdown.addEventListener('mouseleave', function () {
+        const menu = this.querySelector('.dropdown-menu');
+        if (menu) menu.classList.remove('show');
+    });
+});
+
+</script>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 The Asia Travel Guy. All rights reserved.</p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
